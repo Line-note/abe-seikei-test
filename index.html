@@ -5,25 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>阿部整形外科 - ホーム</title>
 
-    <!-- しっぽり明朝 -->
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
             font-family: "Shippori Mincho", serif;
-
-            /* ★ ページ全体の背景を leaf.jpg にする ★ */
-            background-image: url("leaf.jpg");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-
-            /* ★ 色を濃くする（暗めにして深みを出す）★ */
-            filter: brightness(0.85);
+            position: relative;
         }
 
-        /* ★ header は透明レイヤーで文字を読みやすくする ★ */
+        /* ★ 背景専用レイヤー（葉の模様を小さく＆濃く） */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background-image: url("leaf.jpg");
+            background-repeat: repeat;
+            background-size: 280px; /* ← 葉の模様を小さくする */
+            background-position: center;
+
+            filter: brightness(0.80); /* ← 葉の色を濃くする */
+
+            z-index: -1;
+        }
+
+        /* ★ header（透明レイヤーで文字を読みやすく） */
         header {
             color: white;
             padding: 40px 20px;
@@ -49,8 +59,9 @@
             font-weight: 700;
         }
 
+        /* ★ nav も背景を透明にして leaf.jpg を見せる */
         nav {
-            background: rgba(63, 174, 108, 0.85);
+            background: rgba(63, 174, 108, 0.0); /* 完全透明 */
             padding: 12px;
             text-align: center;
         }
@@ -61,34 +72,40 @@
             text-decoration: none;
             font-weight: 700;
             white-space: nowrap;
+            text-shadow: 0 0 4px black;
         }
 
         img {
             border-radius: 8px;
         }
 
-        /* ★ container を “ほのかなグリーン” に変更 ★ */
+        /* ★ container も透明にして leaf.jpg を見せる */
         .container {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
-            background: rgba(240, 250, 240, 0.92); /* ← 淡いグリーン */
+
+            background: rgba(240, 250, 240, 0.35); /* ← ほのかなグリーン＋透明 */
             border-radius: 10px;
         }
 
         h2 {
-            color: #6A8F4E;
+            color: #2f5f2f;
             border-left: 6px solid #E39A3B;
             padding-left: 10px;
             font-weight: 700;
+            text-shadow: 0 0 3px white;
         }
 
         ul {
             line-height: 1.8;
+            color: #003300;
+            font-weight: 600;
+            text-shadow: 0 0 2px white;
         }
 
         footer {
-            background: rgba(46, 139, 87, 0.9);
+            background: rgba(46, 139, 87, 0.85);
             color: white;
             text-align: center;
             padding: 15px;
