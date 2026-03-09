@@ -12,9 +12,18 @@
         .container { max-width: 900px; margin: auto; padding: 20px; background: white; }
         h2 { border-left: 6px solid #2e8b57; padding-left: 10px; }
         h3 { margin-top: 30px; }
-        img { width: 100%; max-width: 600px; display: block; margin: 20px auto; border-radius: 8px; }
         p, ul { line-height: 1.8; }
         footer { background: #2e8b57; color: white; text-align: center; padding: 15px; margin-top: 40px; }
+
+        /* 施設写真（院長写真と同じ1/4サイズ） */
+        .facility-photo {
+            width: 25%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
@@ -42,14 +51,39 @@
         患者様の症状に合わせた総合的な治療を行っています。
     </p>
 
+    <!-- レントゲン -->
     <h3>レントゲン室</h3>
-    <img src="rentogenshitu.jpg" alt="レントゲン室">
+    <img src="rentogenshitu.jpg" alt="レントゲン室" class="facility-photo">
+    <p>
+        診療所としては広くレントゲン室を作っており、立ったままでの膝や腰の撮影もできるようになっています。
+        立った状態で撮影すると体重が乗った状態で膝の関節のすきまが狭くなってきているかなどがわかりやすくなります。
+        腰椎の場合でも曲がり具合などが寝た状態で撮影するより把握しやすく、背中が曲がった方は上向きに寝るのが辛いので
+        立ったまま撮影するほうが楽です。
+    </p>
 
-    <h3>牽引機</h3>
-    <img src="keninki.jpg" alt="牽引機">
+    <!-- バリアフリー -->
+    <h3>バリアフリー</h3>
+    <img src="barrierfree.jpg" alt="バリアフリーに配慮した待合室" class="facility-photo">
+    <p>
+        レントゲン室はX線遮蔽（しゃへい）のため段差がありますが、それ以外はすべてバリアフリーになっています。
+        車椅子でもスムーズに移動できます。
+    </p>
 
-    <h3>ウォーターベッド</h3>
-    <img src="waterbed.jpg" alt="ウォーターベッド">
+    <!-- 電子カルテ -->
+    <h3>電子カルテ</h3>
+    <img src="denjikarte.jpg" alt="電子カルテ" class="facility-photo">
+    <p>
+        電子カルテ、レントゲン画像ファイリングシステムの採用により、事務・診察室の連携がスムーズで、
+        お待たせする時間を短縮するようにしております。
+    </p>
+
+    <!-- 駐車場 -->
+    <h3>駐車場</h3>
+    <img src="parking.jpg" alt="駐車場" class="facility-photo">
+    <p>
+        27台駐車可能の駐車場と提携しております。
+        在院時間に合わせて最大1時間のサービス券をお渡しいたしますので、ご希望の方は当日の駐車券をご提示ください。
+    </p>
 
 </div>
 
