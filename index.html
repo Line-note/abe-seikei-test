@@ -11,57 +11,19 @@
         body {
             margin: 0;
             font-family: "Shippori Mincho", serif;
-            position: relative;
+            background-color: #E8F2E2; /* 全体の背景は淡い緑 */
         }
 
-        /* ★ 背景専用レイヤー（葉の模様を小さく＆濃く） */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-
-            background-image: url("leaf.jpg");
-            background-repeat: repeat;
-            background-size: 280px; /* ← 葉の模様を小さくする */
-            background-position: center;
-
-            filter: brightness(0.80); /* ← 葉の色を濃くする */
-
-            z-index: -1;
-        }
-
-        /* ★ header（透明レイヤーで文字を読みやすく） */
+        /* ★ header は元の緑背景に戻す */
         header {
+            background: #3fae6c;
             color: white;
             padding: 40px 20px;
             text-align: center;
-            position: relative;
         }
 
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.25);
-            z-index: 0;
-        }
-
-        header h1, header p {
-            position: relative;
-            z-index: 1;
-            margin: 0;
-            font-weight: 700;
-        }
-
-        /* ★ nav も背景を透明にして leaf.jpg を見せる */
         nav {
-            background: rgba(63, 174, 108, 0.0); /* 完全透明 */
+            background: #3fae6c;
             padding: 12px;
             text-align: center;
         }
@@ -72,40 +34,52 @@
             text-decoration: none;
             font-weight: 700;
             white-space: nowrap;
-            text-shadow: 0 0 4px black;
         }
 
         img {
             border-radius: 8px;
         }
 
-        /* ★ container も透明にして leaf.jpg を見せる */
+        /* ★ container（お知らせ）は淡いグリーン背景に戻す */
         .container {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
-
-            background: rgba(240, 250, 240, 0.35); /* ← ほのかなグリーン＋透明 */
+            background: #f3f9f1; /* ← ほのかなグリーン */
             border-radius: 10px;
         }
 
         h2 {
-            color: #2f5f2f;
+            color: #6A8F4E;
             border-left: 6px solid #E39A3B;
             padding-left: 10px;
             font-weight: 700;
-            text-shadow: 0 0 3px white;
         }
 
         ul {
             line-height: 1.8;
+        }
+
+        /* ★ 説明文の部分だけ leaf.jpg を背景にする */
+        .leaf-section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+
+            background-image: url("leaf.jpg");
+            background-repeat: repeat;
+            background-size: 280px; /* 葉の模様を小さく */
+            background-position: center;
+
+            filter: brightness(0.85); /* 葉の色を少し濃く */
+
+            border-radius: 10px;
             color: #003300;
             font-weight: 600;
-            text-shadow: 0 0 2px white;
         }
 
         footer {
-            background: rgba(46, 139, 87, 0.85);
+            background: #2e8b57;
             color: white;
             text-align: center;
             padding: 15px;
@@ -131,7 +105,6 @@
 </nav>
 
 <div class="container">
-
     <h2>お知らせ（最新5件）</h2>
     <ul>
         <li>4月4日土曜日休診のお知らせ</li>
@@ -140,7 +113,10 @@
         <li>理学療法は専門的な運動療法を行っております</li>
         <li>ホームページ稼働し始めました</li>
     </ul>
+</div>
 
+<!-- ★ 説明文だけ leaf.jpg の背景にする -->
+<div class="leaf-section">
     <h2>診療時間</h2>
     <p>月〜金：9:00〜12:30 / 15:00〜18:30<br>
        土曜：9:00〜12:30<br>
@@ -149,7 +125,6 @@
     <h2>所在地</h2>
     <p>〒157-0073 東京都世田谷区砧3-4-3 グリーンモール砧1F<br>
        電話：03-5727-3725</p>
-
 </div>
 
 <footer>
