@@ -12,9 +12,18 @@
         .container { max-width: 900px; margin: auto; padding: 20px; background: white; }
         h2 { border-left: 6px solid #2e8b57; padding-left: 10px; }
         h3 { margin-top: 30px; }
-        img { width: 100%; max-width: 600px; display: block; margin: 20px auto; border-radius: 8px; }
         ul { line-height: 1.8; }
         footer { background: #2e8b57; color: white; text-align: center; padding: 15px; margin-top: 40px; }
+
+        /* 院長写真専用スタイル */
+        .doctor-photo {
+            width: 25%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
@@ -36,7 +45,8 @@
 
     <h2>院長紹介</h2>
 
-    <img src="abe.takeo.jpg" alt="院長写真">
+    <!-- 写真を丸く・影付き・中央配置・1/4サイズ -->
+    <img src="abe.takeo.jpg" alt="院長写真" class="doctor-photo">
 
     <p><strong>院長：阿部 健男（あべ たけお）</strong></p>
 
