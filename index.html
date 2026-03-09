@@ -14,42 +14,27 @@
             background-color: #E8F2E2;
         }
 
-        /* ★ header と nav をひとつの leaf.jpg 背景に統合 */
-        .top-block {
-            background-image: url("leaf.jpg");
-            background-repeat: repeat;
-            background-size: 260px; /* 葉の模様を小さく */
-            background-position: center;
-
-            /* ★ 背景全体は明るく、葉の模様だけ濃く */
-            filter: brightness(1.18) contrast(1.28);
-
-            /* ★ ほんのり淡い緑を重ねて優しい雰囲気に */
-            background-color: rgba(240, 255, 240, 0.55);
-            background-blend-mode: lighten;
-
-            padding-bottom: 20px;
-        }
-
+        /* ★ header を元の緑色に戻す */
         header {
+            background: #3fae6c;
             color: white;
-            padding: 40px 20px 20px 20px;
+            padding: 40px 20px;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
             font-weight: 700;
-            text-shadow: 0 0 6px black;
         }
 
         header p {
             margin: 0;
             font-weight: 700;
-            text-shadow: 0 0 6px black;
         }
 
+        /* ★ nav も元の緑色に戻す */
         nav {
+            background: #3fae6c;
             padding: 12px;
             text-align: center;
         }
@@ -60,20 +45,19 @@
             text-decoration: none;
             font-weight: 700;
             white-space: nowrap;
-            text-shadow: 0 0 4px black;
         }
 
         img {
             border-radius: 8px;
         }
 
-        /* ★ お知らせ5件の背景 → さらに薄い緑色 */
+        /* ★ お知らせ5件は淡い緑のまま */
         .container {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
 
-            background: #eef9ee; /* ← 白に近い淡い緑 */
+            background: #eef9ee; /* 白に近い淡い緑 */
             border-radius: 10px;
             color: #003300;
         }
@@ -89,13 +73,13 @@
             line-height: 1.8;
         }
 
-        /* ★ 説明文も同じ薄い緑背景 */
+        /* ★ 説明文も淡い緑のまま */
         .normal-section {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
 
-            background: #eef9ee; /* ← 淡い緑 */
+            background: #eef9ee;
             border-radius: 10px;
             color: #003300;
         }
@@ -112,9 +96,6 @@
 
 <body>
 
-<!-- ★ header と nav をまとめた leaf.jpg 背景ブロック -->
-<div class="top-block">
-
 <header>
     <h1>阿部整形外科</h1>
     <p>地域に根ざした整形外科クリニック</p>
@@ -128,9 +109,6 @@
     <a href="facility.html">施設紹介</a>
     <a href="access.html">アクセス</a>
 </nav>
-
-</div>
-<!-- ★ ここまでが leaf.jpg の背景 -->
 
 <div class="container">
     <h2>お知らせ（最新5件）</h2>
