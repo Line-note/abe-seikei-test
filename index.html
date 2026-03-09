@@ -16,16 +16,30 @@
             margin: 0;
         }
 
-        /* ★ 阿部整形外科の背景だけ若木色＋幅広ドット柄 ★ */
+        /* ★ header を唐草模様風に変更 ★ */
         header {
-            background-color: #7fbf7f; /* 若木色 */
+            background-color: #5a9f5a; /* 少し濃いめの緑 */
             color: white;
             padding: 25px;
             text-align: center;
 
-            /* 幅広めの柔らかいドット柄 */
-            background-image: radial-gradient(rgba(255,255,255,0.25) 2px, transparent 2px);
-            background-size: 14px 14px;
+            /* 唐草模様風の“流れ”を表現したパターン */
+            background-image:
+                repeating-linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.15) 0px,
+                    rgba(255,255,255,0.15) 6px,
+                    transparent 6px,
+                    transparent 18px
+                ),
+                repeating-linear-gradient(
+                    45deg,
+                    rgba(255,255,255,0.10) 0px,
+                    rgba(255,255,255,0.10) 4px,
+                    transparent 4px,
+                    transparent 16px
+                );
+            background-size: 100% 100%;
         }
 
         header h1 {
