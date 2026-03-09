@@ -14,45 +14,42 @@
             background-color: #E8F2E2;
         }
 
-        /* ★ タイトル部分だけ leaf.jpg を背景にする */
+        /* ★ header と nav をひとつの背景ブロックに統合 */
+        .top-block {
+            background-image: url("leaf.jpg");
+            background-repeat: repeat;
+            background-size: 260px; /* 葉の模様を少し小さく */
+            background-position: center;
+
+            /* 葉の色を濃くする */
+            filter: brightness(0.75);
+
+            /* ほんのり淡い緑を重ねる */
+            background-color: rgba(230, 245, 230, 0.6);
+            background-blend-mode: overlay;
+
+            padding-bottom: 20px;
+        }
+
         header {
             color: white;
-            padding: 40px 20px;
+            padding: 40px 20px 20px 20px;
             text-align: center;
-            position: relative;
-
-            background-image: url("leaf.jpg");
-            background-repeat: repeat;
-            background-size: 280px;
-            background-position: center;
         }
 
-        /* ★ タイトルが消えないように薄い暗めレイヤーを追加 */
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.25); /* ← これで文字が見える */
-            z-index: 0;
-        }
-
-        header h1, header p {
-            position: relative;
-            z-index: 1;
+        header h1 {
             margin: 0;
             font-weight: 700;
+            text-shadow: 0 0 6px black;
         }
 
-        /* ★ nav（ロビー写真＋リンク）も leaf.jpg にする */
-        nav {
-            background-image: url("leaf.jpg");
-            background-repeat: repeat;
-            background-size: 280px;
-            background-position: center;
+        header p {
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 0 0 6px black;
+        }
 
+        nav {
             padding: 12px;
             text-align: center;
         }
@@ -70,7 +67,7 @@
             border-radius: 8px;
         }
 
-        /* ★ お知らせ5件は普通の背景に戻す */
+        /* ★ お知らせ5件は普通の背景 */
         .container {
             max-width: 900px;
             margin: 20px auto;
@@ -92,7 +89,7 @@
             line-height: 1.8;
         }
 
-        /* ★ 説明文も普通の背景のまま */
+        /* ★ 説明文も普通の背景 */
         .normal-section {
             max-width: 900px;
             margin: 20px auto;
@@ -115,6 +112,9 @@
 
 <body>
 
+<!-- ★ header と nav をまとめた背景ブロック -->
+<div class="top-block">
+
 <header>
     <h1>阿部整形外科</h1>
     <p>地域に根ざした整形外科クリニック</p>
@@ -128,6 +128,9 @@
     <a href="facility.html">施設紹介</a>
     <a href="access.html">アクセス</a>
 </nav>
+
+</div>
+<!-- ★ ここまでが leaf.jpg の背景 -->
 
 <div class="container">
     <h2>お知らせ（最新5件）</h2>
