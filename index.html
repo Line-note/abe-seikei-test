@@ -11,7 +11,7 @@
         body {
             margin: 0;
             font-family: "Shippori Mincho", serif;
-            background-color: #E8F2E2; /* 全体の背景は淡い緑 */
+            background-color: #E8F2E2;
         }
 
         /* ★ タイトル部分だけ leaf.jpg を背景にする */
@@ -23,11 +23,16 @@
             background-image: url("leaf.jpg");
             background-repeat: repeat;
             background-size: 280px; /* 葉の模様を小さく */
-            filter: brightness(0.85); /* 少し濃く */
+            background-position: center;
         }
 
+        /* ★ nav（ロビー写真＋リンク）も leaf.jpg にする */
         nav {
-            background: #3fae6c;
+            background-image: url("leaf.jpg");
+            background-repeat: repeat;
+            background-size: 280px;
+            background-position: center;
+
             padding: 12px;
             text-align: center;
         }
@@ -38,26 +43,22 @@
             text-decoration: none;
             font-weight: 700;
             white-space: nowrap;
+            text-shadow: 0 0 4px black;
         }
 
         img {
             border-radius: 8px;
         }
 
-        /* ★ お知らせ5項目の container も leaf.jpg にする */
+        /* ★ お知らせ5件は普通の背景に戻す */
         .container {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
 
-            background-image: url("leaf.jpg");
-            background-repeat: repeat;
-            background-size: 280px;
-            filter: brightness(0.85);
-
+            background: #f3f9f1; /* ← 淡いグリーン */
             border-radius: 10px;
             color: #003300;
-            font-weight: 600;
         }
 
         h2 {
@@ -65,21 +66,19 @@
             border-left: 6px solid #E39A3B;
             padding-left: 10px;
             font-weight: 700;
-            text-shadow: 0 0 3px white;
         }
 
         ul {
             line-height: 1.8;
-            text-shadow: 0 0 2px white;
         }
 
-        /* ★ 説明文は普通の背景に戻す */
+        /* ★ 説明文も普通の背景のまま */
         .normal-section {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
 
-            background: #f3f9f1; /* 淡いグリーン */
+            background: #f3f9f1;
             border-radius: 10px;
             color: #003300;
         }
@@ -110,7 +109,7 @@
     <a href="access.html">アクセス</a>
 </nav>
 
-<!-- ★ お知らせ5項目 → leaf.jpg 背景 -->
+<!-- ★ お知らせ5件 → 普通の背景 -->
 <div class="container">
     <h2>お知らせ（最新5件）</h2>
     <ul>
@@ -122,7 +121,7 @@
     </ul>
 </div>
 
-<!-- ★ 説明文 → 普通の背景に戻す -->
+<!-- ★ 説明文 → 普通の背景 -->
 <div class="normal-section">
     <h2>診療時間</h2>
     <p>月〜金：9:00〜12:30 / 15:00〜18:30<br>
