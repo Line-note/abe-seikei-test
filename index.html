@@ -14,19 +14,19 @@
             background-color: #E8F2E2;
         }
 
-        /* ★ header と nav をひとつの背景ブロックに統合 */
+        /* ★ header と nav をひとつの leaf.jpg 背景に統合 */
         .top-block {
             background-image: url("leaf.jpg");
             background-repeat: repeat;
             background-size: 260px; /* 葉の模様を小さく */
             background-position: center;
 
-            /* ★ 葉の色をさらに濃くする */
-            filter: brightness(0.65);
+            /* ★ 背景全体は明るく、葉の模様だけ濃く */
+            filter: brightness(1.18) contrast(1.28);
 
-            /* ★ ほんのり淡い緑を重ねる */
-            background-color: rgba(230, 245, 230, 0.55);
-            background-blend-mode: overlay;
+            /* ★ ほんのり淡い緑を重ねて優しい雰囲気に */
+            background-color: rgba(240, 255, 240, 0.55);
+            background-blend-mode: lighten;
 
             padding-bottom: 20px;
         }
@@ -67,13 +67,13 @@
             border-radius: 8px;
         }
 
-        /* ★ お知らせ5件の背景を “さらに薄い緑” に変更 */
+        /* ★ お知らせ5件の背景 → さらに薄い緑色 */
         .container {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
 
-            background: #edf7ec; /* ← さらに淡い緑に調整 */
+            background: #eef9ee; /* ← 白に近い淡い緑 */
             border-radius: 10px;
             color: #003300;
         }
@@ -89,13 +89,13 @@
             line-height: 1.8;
         }
 
-        /* ★ 説明文も同じ薄い緑に統一 */
+        /* ★ 説明文も同じ薄い緑背景 */
         .normal-section {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
 
-            background: #edf7ec; /* ← さらに淡い緑 */
+            background: #eef9ee; /* ← 淡い緑 */
             border-radius: 10px;
             color: #003300;
         }
@@ -112,6 +112,7 @@
 
 <body>
 
+<!-- ★ header と nav をまとめた leaf.jpg 背景ブロック -->
 <div class="top-block">
 
 <header>
@@ -129,6 +130,7 @@
 </nav>
 
 </div>
+<!-- ★ ここまでが leaf.jpg の背景 -->
 
 <div class="container">
     <h2>お知らせ（最新5件）</h2>
