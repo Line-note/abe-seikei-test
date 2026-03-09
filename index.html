@@ -19,11 +19,31 @@
             color: white;
             padding: 40px 20px;
             text-align: center;
+            position: relative;
 
             background-image: url("leaf.jpg");
             background-repeat: repeat;
-            background-size: 280px; /* 葉の模様を小さく */
+            background-size: 280px;
             background-position: center;
+        }
+
+        /* ★ タイトルが消えないように薄い暗めレイヤーを追加 */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.25); /* ← これで文字が見える */
+            z-index: 0;
+        }
+
+        header h1, header p {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            font-weight: 700;
         }
 
         /* ★ nav（ロビー写真＋リンク）も leaf.jpg にする */
@@ -56,7 +76,7 @@
             margin: 20px auto;
             padding: 20px;
 
-            background: #f3f9f1; /* ← 淡いグリーン */
+            background: #f3f9f1;
             border-radius: 10px;
             color: #003300;
         }
@@ -109,7 +129,6 @@
     <a href="access.html">アクセス</a>
 </nav>
 
-<!-- ★ お知らせ5件 → 普通の背景 -->
 <div class="container">
     <h2>お知らせ（最新5件）</h2>
     <ul>
@@ -121,7 +140,6 @@
     </ul>
 </div>
 
-<!-- ★ 説明文 → 普通の背景 -->
 <div class="normal-section">
     <h2>診療時間</h2>
     <p>月〜金：9:00〜12:30 / 15:00〜18:30<br>
