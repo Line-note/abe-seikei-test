@@ -21,12 +21,13 @@
       text-align: center;
     }
 
+    /* ★ ロゴ画像だけ影なし & サイズ75% ★ */
     header img {
       display: block;
       margin: 0 auto;
       max-width: 600px;
-      width: 90%;
-      box-shadow: none; /* ← ロゴだけ影なし */
+      width: 75%;   /* ← 75% に変更 */
+      box-shadow: none; /* ← 影なし */
     }
 
     nav {
@@ -43,11 +44,13 @@
       white-space: nowrap;
     }
 
+    /* ロビー写真は影ありのまま */
     nav img {
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
+    /* 通常の画像（ロビーなど）は影あり */
     img {
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
@@ -73,6 +76,7 @@
       line-height: 1.8;
     }
 
+    /* NEW! バッジ */
     .new-badge {
       background: #E39A3B;
       color: white;
@@ -87,7 +91,7 @@
       max-width: 900px;
       margin: 20px auto;
       padding: 20px;
-      background: #f4fff4;
+      background: #f4fff4; /* 極薄い緑 */
       border-radius: 10px;
       color: #003300;
     }
