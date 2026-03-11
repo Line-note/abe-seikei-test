@@ -12,22 +12,23 @@
     body {
       margin: 0;
       font-family: "Shippori Mincho", serif;
-      background-color: #f9fff9; /* 超薄い緑 */
+      background-color: #f9fff9;
     }
 
+    /* ★ leaf.jpg を背景に敷く ★ */
     header {
-      background: #2e8b57;
-      padding: 10px 0;
+      background: url("leaf.jpg") center/cover no-repeat;
+      padding: 40px 0;
       text-align: center;
     }
 
-    /* ★ ロゴ画像だけ影なし & サイズ75% ★ */
+    /* ★ ロゴは影なし・75% ★ */
     header img {
       display: block;
       margin: 0 auto;
       max-width: 600px;
-      width: 75%;   /* ← 75% に変更 */
-      box-shadow: none; /* ← 影なし */
+      width: 75%;
+      box-shadow: none;
     }
 
     nav {
@@ -44,13 +45,11 @@
       white-space: nowrap;
     }
 
-    /* ロビー写真は影ありのまま */
     nav img {
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
-    /* 通常の画像（ロビーなど）は影あり */
     img {
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
@@ -60,13 +59,13 @@
       max-width: 900px;
       margin: 20px auto;
       padding: 20px;
-      background: #f4fff4; /* 極薄い緑 */
+      background: #f4fff4;
       border-radius: 10px;
       color: #003300;
     }
 
     h2 {
-      color: #1f6b3f; /* 濃い緑 */
+      color: #1f6b3f;
       border-left: 6px solid #1f6b3f;
       padding-left: 10px;
       font-weight: 700;
@@ -76,7 +75,6 @@
       line-height: 1.8;
     }
 
-    /* NEW! バッジ */
     .new-badge {
       background: #E39A3B;
       color: white;
@@ -91,7 +89,7 @@
       max-width: 900px;
       margin: 20px auto;
       padding: 20px;
-      background: #f4fff4; /* 極薄い緑 */
+      background: #f4fff4;
       border-radius: 10px;
       color: #003300;
     }
