@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>阿部整形外科 - ホーム</title>
 
-  <!-- しっぽり明朝 -->
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -13,12 +12,36 @@
       margin: 0;
       font-family: "Shippori Mincho", serif;
       background-color: #f9fff9;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ▼ 葉の模様を左右に固定配置（ロゴや写真にかからない） ▼ */
+    .leaf-left,
+    .leaf-right {
+      position: fixed;
+      top: 160px; /* ロゴにかからない高さに調整 */
+      width: 180px;
+      height: auto;
+      opacity: 0.9;
+      z-index: 1; /* 背景扱い */
+      pointer-events: none; /* クリックを邪魔しない */
+    }
+
+    .leaf-left {
+      left: 0;
+    }
+
+    .leaf-right {
+      right: 0;
     }
 
     header {
       background: url("leaf.jpg") center/cover no-repeat;
       padding: 40px 0;
       text-align: center;
+      position: relative;
+      z-index: 10; /* 葉より前面に出す */
     }
 
     header img {
@@ -29,18 +52,12 @@
       box-shadow: none;
     }
 
-    /* ▼ 背景に葉飾りを追加（ロゴ領域にはかからない） ▼ */
-    .content-background {
-      background: url("IMG_2363.png") center/contain no-repeat;
-      background-size: cover;
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-
     nav {
       background: #3fae6c;
       padding: 12px;
       text-align: center;
+      position: relative;
+      z-index: 10;
     }
 
     nav a {
@@ -56,18 +73,16 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
-    img {
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    }
-
-    .container {
+    .container,
+    .normal-section {
       max-width: 900px;
       margin: 20px auto;
       padding: 20px;
       background: #f4fff4;
       border-radius: 10px;
       color: #003300;
+      position: relative;
+      z-index: 10; /* 葉より前面に出す */
     }
 
     h2 {
@@ -77,82 +92,57 @@
       font-weight: 700;
     }
 
-    ul {
-      line-height: 1.8;
-    }
-
-    .new-badge {
-      background: #E39A3B;
-      color: white;
-      font-size: 0.8em;
-      font-weight: bold;
-      padding: 2px 6px;
-      border-radius: 4px;
-      margin-left: 8px;
-    }
-
-    .normal-section {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #f4fff4;
-      border-radius: 10px;
-      color: #003300;
-    }
-
     footer {
       background: #2e8b57;
       color: white;
       text-align: center;
       padding: 15px;
       margin-top: 40px;
+      position: relative;
+      z-index: 10;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- ▼ 左右の葉飾り（背景扱い） ▼ -->
+  <img src="IMG_2363.png" class="leaf-left" alt="">
+  <img src="IMG_2363.png" class="leaf-right" alt="">
+
   <header>
     <img src="IMG_2354.png" alt="阿部整形外科ロゴ">
   </header>
 
-  <!-- ▼ 葉飾り背景を適用する領域 ▼ -->
-  <div class="content-background">
+  <nav>
+    <img src="robi.jpg" alt="ロビー" style="display:block; margin:0 auto 20px;">
+    <a href="news.html">お知らせ</a>
+    <a href="shinryo.html">診療案内</a>
+    <a href="doctor.html">医師紹介</a>
+    <a href="facility.html">施設紹介</a>
+    <a href="access.html">アクセス</a>
+  </nav>
 
-    <nav>
-      <img src="robi.jpg" alt="ロビー" style="display:block; margin:0 auto 20px;">
-      <a href="news.html">お知らせ</a>
-      <a href="shinryo.html">診療案内</a>
-      <a href="doctor.html">医師紹介</a>
-      <a href="facility.html">施設紹介</a>
-      <a href="access.html">アクセス</a>
-    </nav>
+  <div class="container">
+    <h2>お知らせ（最新5件）</h2>
+    <ul>
+      <li><a href="news.html">4月4日土曜日休診のお知らせ</a> <span class="new-badge">NEW!</span></li>
+      <li>令和2年8月に骨密度測定器を最新にしました</li>
+      <li><a href="access.html#parking">提携駐車場のご案内</a></li>
+      <li>理学療法は専門的な運動療法を行っております</li>
+      <li>ホームページ稼働し始めました</li>
+    </ul>
+  </div>
 
-    <div class="container">
-      <h2>お知らせ（最新5件）</h2>
-      <ul>
-        <li>
-          <a href="news.html">4月4日土曜日休診のお知らせ</a>
-          <span class="new-badge">NEW!</span>
-        </li>
-        <li>令和2年8月に骨密度測定器を最新にしました</li>
-        <li><a href="access.html#parking">提携駐車場のご案内</a></li>
-        <li>理学療法は専門的な運動療法を行っております</li>
-        <li>ホームページ稼働し始めました</li>
-      </ul>
-    </div>
+  <div class="normal-section">
+    <h2>診療時間</h2>
+    <p>月〜金：9:00〜12:30 / 15:00〜18:30<br>
+       土曜：9:00〜12:30<br>
+       休診日：木曜・日曜・祝日</p>
 
-    <div class="normal-section">
-      <h2>診療時間</h2>
-      <p>月〜金：9:00〜12:30 / 15:00〜18:30<br>
-         土曜：9:00〜12:30<br>
-         休診日：木曜・日曜・祝日</p>
-
-      <h2>所在地</h2>
-      <p>〒157-0073 東京都世田谷区砧3-4-3 グリーンモール砧1F<br>
-         電話：03-5727-3725</p>
-    </div>
-
+    <h2>所在地</h2>
+    <p>〒157-0073 東京都世田谷区砧3-4-3 グリーンモール砧1F<br>
+       電話：03-5727-3725</p>
   </div>
 
   <footer>
