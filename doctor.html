@@ -4,29 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>医師紹介 - 阿部整形外科</title>
+
+    <!-- しっぽり明朝 -->
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        body { font-family: sans-serif; margin: 0; background: #f6fff6; }
-        header { background: #2e8b57; color: white; padding: 25px; text-align: center; }
-        nav { background: #3fae6c; padding: 12px; text-align: center; }
-        nav a { color: white; margin: 0 18px; text-decoration: none; font-weight: bold; }
-        .container { max-width: 900px; margin: auto; padding: 20px; background: white; }
-        h2 { border-left: 6px solid #2e8b57; padding-left: 10px; }
-        h3 { margin-top: 30px; }
+        body { 
+            font-family: "Shippori Mincho", serif;
+            margin: 0; 
+            background: #f9fff9; /* 超薄い緑 */
+        }
+
+        header { 
+            background: #2e8b57; 
+            color: white; 
+            padding: 25px; 
+            text-align: center; 
+        }
+
+        nav { 
+            background: #3fae6c; 
+            padding: 12px; 
+            text-align: center; 
+        }
+
+        nav a { 
+            color: white; 
+            margin: 0 18px; 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+
+        .container { 
+            max-width: 900px; 
+            margin: auto; 
+            padding: 20px; 
+            background: #f4fff4; /* 極薄い緑 */
+            border-radius: 10px;
+        }
+
+        h2 { 
+            border-left: 6px solid #1f6b3f; /* 濃い緑 */
+            padding-left: 10px; 
+            color: #1f6b3f; /* 見出し文字も濃い緑 */
+        }
+
+        h3 { 
+            margin-top: 30px; 
+            color: #1f6b3f; /* h3も統一して濃い緑に */
+        }
+
         ul { line-height: 1.8; }
-        footer { background: #2e8b57; color: white; text-align: center; padding: 15px; margin-top: 40px; }
+
+        footer { 
+            background: #2e8b57; 
+            color: white; 
+            text-align: center; 
+            padding: 15px; 
+            margin-top: 40px; 
+        }
+
+        /* 画像：角丸＋影 */
+        .doctor-photo,
+        .logo-banner {
+            display: block;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
 
         .doctor-photo {
             width: 25%;
             height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
 
         .logo-banner {
-            display: block;
-            margin: 20px auto;
             max-width: 600px;
             width: 90%;
         }
@@ -119,7 +171,6 @@
 
     <h3>阿部整形外科ロゴ</h3>
 
-    <!-- ▼▼▼ rogo4.jpg をここに挿入 ▼▼▼ -->
     <img src="rogo4.jpg" alt="阿部整形外科ロゴ" class="logo-banner">
 
     <p>
