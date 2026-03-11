@@ -16,24 +16,24 @@
       overflow-x: hidden;
     }
 
-    /* ▼ 葉の模様を左右に固定配置（ロゴや写真にかからない） ▼ */
+    /* ▼ 濃い葉模様（IMG_2364.png）を左右に固定配置 ▼ */
     .leaf-left,
     .leaf-right {
       position: fixed;
-      top: 160px; /* ロゴにかからない高さに調整 */
-      width: 180px;
+      top: 220px; /* ロゴにかからない高さに調整 */
+      width: 240px;
       height: auto;
-      opacity: 0.9;
-      z-index: 1; /* 背景扱い */
-      pointer-events: none; /* クリックを邪魔しない */
+      opacity: 1;
+      z-index: 1;
+      pointer-events: none;
     }
 
     .leaf-left {
-      left: 0;
+      left: 10px;
     }
 
     .leaf-right {
-      right: 0;
+      right: 10px;
     }
 
     header {
@@ -41,7 +41,7 @@
       padding: 40px 0;
       text-align: center;
       position: relative;
-      z-index: 10; /* 葉より前面に出す */
+      z-index: 10;
     }
 
     header img {
@@ -73,6 +73,11 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
+    img {
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
     .container,
     .normal-section {
       max-width: 900px;
@@ -82,7 +87,7 @@
       border-radius: 10px;
       color: #003300;
       position: relative;
-      z-index: 10; /* 葉より前面に出す */
+      z-index: 10;
     }
 
     h2 {
@@ -90,6 +95,16 @@
       border-left: 6px solid #1f6b3f;
       padding-left: 10px;
       font-weight: 700;
+    }
+
+    .new-badge {
+      background: #E39A3B;
+      color: white;
+      font-size: 0.8em;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
     }
 
     footer {
@@ -106,9 +121,9 @@
 
 <body>
 
-  <!-- ▼ 左右の葉飾り（背景扱い） ▼ -->
-  <img src="IMG_2363.png" class="leaf-left" alt="">
-  <img src="IMG_2363.png" class="leaf-right" alt="">
+  <!-- ▼ 左右の濃い葉模様（背景装飾） ▼ -->
+  <img src="IMG_2364.png" class="leaf-left" alt="">
+  <img src="IMG_2364.png" class="leaf-right" alt="">
 
   <header>
     <img src="IMG_2354.png" alt="阿部整形外科ロゴ">
