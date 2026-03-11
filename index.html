@@ -22,13 +22,13 @@
       text-align: center;
     }
 
-    /* ★ ロゴは影なし・75% ★ */
+    /* ★ 背景透過ロゴ（rogo8.png）を使用 ★ */
     header img {
       display: block;
       margin: 0 auto;
       max-width: 600px;
       width: 75%;
-      box-shadow: none;
+      box-shadow: none; /* ロゴは影なし */
     }
 
     nav {
@@ -45,11 +45,13 @@
       white-space: nowrap;
     }
 
+    /* ロビー写真は影あり */
     nav img {
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
+    /* 通常の画像は影あり */
     img {
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
@@ -107,7 +109,8 @@
 <body>
 
   <header>
-    <img src="rogo8.jpg" alt="阿部整形外科ロゴ">
+    <!-- ★ 背景透過版ロゴに変更 ★ -->
+    <img src="rogo8.png" alt="阿部整形外科ロゴ">
   </header>
 
   <nav>
