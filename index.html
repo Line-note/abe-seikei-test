@@ -41,7 +41,7 @@
     nav::after {
       content: "";
       position: absolute;
-      top: 80px; /* 少し下げる */
+      top: 40px; /* ← 上へ戻す（前より40px上） */
       width: 240px;
       height: 100%;
       background-image: url("IMG_2366.png");
@@ -54,12 +54,12 @@
     }
 
     nav::before {
-      left: 10px; /* 外側へ＋全体を左寄せ */
+      left: 10px; /* ← 左はそのまま */
       background-position: left top;
     }
 
     nav::after {
-      right: -10px; /* 外側へ＋全体を左寄せ */
+      right: 40px; /* ← 右だけ中央へ寄せる（前より20px内側） */
       background-position: right top;
     }
 
