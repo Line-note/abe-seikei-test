@@ -28,7 +28,7 @@
       box-shadow: none;
     }
 
-    /* ▼ nav に葉模様（IMG_2366.png）を左右に配置（強めに位置調整） ▼ */
+    /* ▼ nav に葉模様（IMG_2366.png）を左右に配置（微調整版） ▼ */
     nav {
       background-color: #3fae6c;
       position: relative;
@@ -41,7 +41,7 @@
     nav::after {
       content: "";
       position: absolute;
-      top: 0px; /* ← もっと上へ（navの上端から） */
+      top: -20px; /* ← 全体をさらに上へ */
       width: 240px;
       height: 100%;
       background-image: url("IMG_2366.png");
@@ -54,12 +54,12 @@
     }
 
     nav::before {
-      left: 0px; /* ← 左端に寄せる（全体を左寄りに） */
+      left: 0px; /* ← 左はそのまま */
       background-position: left top;
     }
 
     nav::after {
-      right: 80px; /* ← 右を大きく左へ寄せる */
+      right: 60px; /* ← 右だけ少し右へ（20px移動） */
       background-position: right top;
     }
 
