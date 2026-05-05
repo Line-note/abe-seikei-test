@@ -22,27 +22,28 @@
       line-height: 1.8;
     }
 
-    /* ▼ ヘッダー：ロゴ背景と下の緑エリアの境目をぼかす ▼ */
+    /* ▼ ヘッダー：背景と下の緑の境目を曖昧にぼかす */
     header {
       background:
         linear-gradient(180deg,
-          rgba(255,255,255,0) 0%,
-          rgba(255,255,255,0.4) 40%,
-          rgba(255,255,255,0.7) 70%,
-          rgba(255,255,255,0) 100%
+          rgba(255,255,255,0.0) 0%,
+          rgba(255,255,255,0.35) 40%,
+          rgba(255,255,255,0.55) 70%,
+          rgba(255,255,255,0.0) 100%
         ),
         url("leaf.jpg") center/cover no-repeat;
-      padding: 60px 0 50px;
+      padding: 40px 0 20px;
       text-align: center;
       backdrop-filter: blur(2px);
     }
 
-    /* ▼ ロゴ：2倍サイズ、影なし、背景と完全一体化 */
+    /* ▼ ロゴ画像：配置そのままに “2倍の大きさ” */
     header img {
       display: block;
       margin: 0 auto;
-      width: 90%;          /* ← 元の75% → 約2倍の視覚効果 */
-      max-width: 900px;    /* ← 大型化 */
+      width: 150%;          /* ← 元の75% → 正確に2倍 */
+      max-width: 1200px;    /* ← 大型化 */
+      transform: scale(1.2); /* ← 視覚的にさらに大きく見せる */
       box-shadow: none !important;
       border-radius: 0 !important;
       background: transparent !important;
@@ -56,14 +57,12 @@
         #4fcf8a 70%,
         #3fae6c 100%
       );
-      position: relative;
       padding: 14px;
       text-align: center;
-      overflow: hidden;
       box-shadow: 0 3px 12px rgba(0,0,0,0.15);
     }
 
-    /* nav の葉模様を完全削除（before/after を消す） */
+    /* nav の葉模様は完全削除（before/after を置かない） */
 
     nav a {
       color: white;
@@ -71,8 +70,6 @@
       text-decoration: none;
       font-weight: 700;
       white-space: nowrap;
-      position: relative;
-      z-index: 2;
       transition: opacity 0.2s, text-shadow 0.2s;
     }
 
@@ -81,24 +78,22 @@
       text-shadow: 0 0 8px rgba(255,255,255,0.6);
     }
 
-    /* nav 内のロビー画像 */
     nav img {
       border-radius: 15px;
       box-shadow: 0 4px 18px rgba(0,0,0,0.25);
-      position: relative;
-      z-index: 2;
+      margin-bottom: 20px;
     }
 
-    /* ▼ container：写真下の緑グラデーションを薄く調整 */
+    /* ▼ container：緑グラデーションを “薄く” 調整 */
     .container,
     .normal-section {
       max-width: 900px;
       margin: 20px auto;
       padding: 24px;
       background: linear-gradient(135deg,
-        #f4fff4 0%,
-        #f0fff8 50%,
-        #e8ffee 100%
+        #f8fff8 0%,
+        #f3fff6 50%,
+        #ecffee 100%
       );
       border-radius: 12px;
       color: #003300;
@@ -147,7 +142,7 @@
   </header>
 
   <nav>
-    <img src="robi.jpg" alt="ロビー" style="display:block; margin:0 auto 20px;">
+    <img src="robi.jpg" alt="ロビー">
     <a href="news.html">お知らせ</a>
     <a href="shinryo.html">診療案内</a>
     <a href="doctor.html">医師紹介</a>
