@@ -27,23 +27,23 @@
       z-index: 1;
     }
 
-    /* ▼ ロゴを下に下げる（translateY 追加） */
+    /* ▼ ロゴをさらに下へ（隙間をほぼゼロに） */
     header img.logo {
       display: block;
       margin: 0 auto 0px auto;
       width: 90%;
       max-width: 800px;
-      transform: scale(1.15) translateX(-14px) translateY(12px); 
-      /* ↑ ここが最重要：ロゴを下へ12px */
+      transform: scale(1.15) translateX(-14px) translateY(35px);
+      /* ↑ ここが最重要：ロゴを35px下へ */
       position: relative;
       z-index: 5;
     }
 
-    /* ▼ 写真は動かさない */
+    /* ▼ 写真は動かさない（位置そのまま） */
     .nav-area {
       position: relative;
       z-index: 10;
-      margin-top: -10px; /* ← ロゴを下げた分だけ微調整（自然に詰まる） */
+      margin-top: 0px; /* ← 写真の位置を固定 */
     }
 
     .nav-area img {
