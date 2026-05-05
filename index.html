@@ -33,13 +33,25 @@
       transform: scale(1.15) translateX(-14px);
     }
 
-    /* ▼ nav（背景は透明にする） */
+    /* ▼ nav（背景は nav::before に移動） */
     nav {
-      background: transparent; /* ← ここが最重要 */
+      background: transparent; /* ← nav 自体は透明にする */
       padding: 14px;
       text-align: center;
       position: relative;
-      z-index: 2; /* ← 前面に固定 */
+      z-index: 10; /* ← nav の中身を最前面に */
+    }
+
+    /* ▼ nav の背景（1色の薄い緑） */
+    nav::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #e9fff0; /* ← 完全に1色の薄い緑 */
+      z-index: 1; /* ← nav の背景として正しく機能 */
     }
 
     nav a {
@@ -48,7 +60,7 @@
       text-decoration: none;
       font-weight: 700;
       position: relative;
-      z-index: 3;
+      z-index: 20; /* ← 背景より前 */
     }
 
     nav img {
@@ -57,21 +69,7 @@
       border-radius: 15px;
       box-shadow: 0 4px 18px rgba(0,0,0,0.25);
       position: relative;
-      z-index: 3;
-    }
-
-    /* ▼ nav の背景は nav::before にする（ズレない・リンクに干渉しない） */
-    nav::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-
-      background: #e9fff0; /* ← 完全に1色の薄い緑 */
-
-      z-index: 1; /* ← nav の背景として正しく機能 */
+      z-index: 20; /* ← 背景より前 */
     }
 
     /* ▼ nav の下の葉模様（ズレない・リンクに干渉しない） */
