@@ -19,7 +19,12 @@
     /* ▼ 背景はそのまま（つながり維持） */
     header {
       background:
-        linear-gradient(180deg,rgba(255,255,255,0.0) 0%,rgba(255,255,255,0.35) 40%,rgba(255,255,255,0.55) 70%,rgba(255,255,255,0.0) 100%),
+        linear-gradient(180deg,
+          rgba(255,255,255,0.0) 0%,
+          rgba(255,255,255,0.35) 40%,
+          rgba(255,255,255,0.55) 70%,
+          rgba(255,255,255,0.0) 100%
+        ),
         url("leaf.jpg") center/cover no-repeat;
       padding: 20px 0 40px;
       text-align: center;
@@ -27,14 +32,14 @@
       z-index: 1;
     }
 
-    /* ▼ ロゴをさらに下へ＋少し大きく */
+    /* ▼ ロゴをさらに下へ＋少し大きく（1.27 に拡大） */
     header img.logo {
       display: block;
       margin: 0 auto 0px auto;
       width: 90%;
       max-width: 800px;
-      transform: scale(1.22) translateX(-14px) translateY(67px);
-      /* ↑ scale:1.22（6%拡大） / translateY:67px（さらに下へ12px） */
+      transform: scale(1.27) translateX(-14px) translateY(67px);
+      /* ↑ scale:1.27（前回より +4% 拡大） */
       position: relative;
       z-index: 5;
     }
