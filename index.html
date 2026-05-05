@@ -16,12 +16,12 @@
       line-height: 1.8;
     }
 
-    /* ▼ header の葉背景はそのまま（位置・大きさ変更なし） */
+    /* ▼ header の葉背景はそのまま。余白だけ調整 */
     header {
       background:
         linear-gradient(180deg,rgba(255,255,255,0.0) 0%,rgba(255,255,255,0.35) 40%,rgba(255,255,255,0.55) 70%,rgba(255,255,255,0.0) 100%),
         url("leaf.jpg") center/cover no-repeat;
-      padding: 20px 0 40px;
+      padding: 20px 0 5px; /* ← 40px → 5px に変更（隙間を狭くする） */
       text-align: center;
       position: relative;
       z-index: 1;
@@ -29,7 +29,7 @@
 
     header img.logo {
       display: block;
-      margin: 0 auto 20px auto;
+      margin: 0 auto 10px auto; /* ← 20px → 10px に変更 */
       width: 90%;
       max-width: 800px;
       transform: scale(1.15) translateX(-14px);
@@ -37,7 +37,7 @@
       z-index: 5;
     }
 
-    /* ▼ 写真とリンクを header の中に入れる */
+    /* ▼ 写真とリンクは header 内 */
     .nav-area {
       position: relative;
       z-index: 10;
@@ -64,13 +64,11 @@
       font-size: 1.1em;
     }
 
-    /* ▼ 下のエリア（葉背景なし） */
     .container,
     .normal-section {
       max-width: 900px;
       margin: 40px auto 20px;
       padding: 24px;
-
       background: #ffffff;
       border-radius: 12px;
       border-left: 6px solid #4fcf8a;
@@ -109,7 +107,6 @@
   <header>
     <img src="IMG_2354.png" class="logo" alt="阿部整形外科ロゴ">
 
-    <!-- ▼ 写真とリンクを header 内に移動 -->
     <div class="nav-area">
       <img src="robi.jpg" alt="ロビー">
       <a href="news.html">お知らせ</a>
