@@ -37,34 +37,29 @@
       backdrop-filter: blur(2px);
     }
 
-    /* ▼ ロゴ：ほんの少しだけ大きく、さらに少し左へ */
+    /* ▼ ロゴ：ほんの少しだけ大きく、さらに左へ */
     header img {
       display: block;
       margin: 0 auto;
-      width: 88%;            /* ← 前回85% → さらに微増 */
-      max-width: 780px;      /* ← 枠からはみ出さない最大値 */
-      transform: scale(1.14) translateX(-12px); /* ← 左へ少し移動 */
+      width: 90%;            /* ← 微増 */
+      max-width: 800px;      /* ← 枠からはみ出さない */
+      transform: scale(1.15) translateX(-14px); /* ← 左へ寄せる */
       box-shadow: none !important;
       border-radius: 0 !important;
       background: transparent !important;
     }
 
-    /* ▼ nav：葉模様なし、グラデーションはそのまま */
+    /* ▼ nav：背景を完全に 1 色の薄い緑に統一 */
     nav {
-      background: linear-gradient(90deg,
-        #2f8f5a 0%,
-        #3fae6c 40%,
-        #4fcf8a 70%,
-        #3fae6c 100%
-      );
+      background: #e9fff0; /* ← 完全に 1 色の薄い緑 */
       padding: 14px;
       text-align: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
       position: relative;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
     }
 
     nav a {
-      color: white;
+      color: #ffffff;
       margin: 0 18px;
       text-decoration: none;
       font-weight: 700;
@@ -85,28 +80,28 @@
       box-shadow: 0 4px 18px rgba(0,0,0,0.25);
     }
 
-    /* ▼ nav の下の背景を “完全に 1 色の薄い緑” に統一し、葉模様を header と同じ leaf.jpg に変更 */
+    /* ▼ nav の下の背景に “header と同じ葉模様” を透過で重ねる */
     nav::after {
       content: "";
       position: absolute;
-      bottom: -55px;
+      bottom: -60px;
       left: 0;
       width: 100%;
       height: 160px;
 
-      /* 背景を完全に 1 色の薄い緑に統一（2色問題を完全解消） */
-      background: rgba(235,255,240,1);
+      /* 背景は完全に 1 色の薄い緑 */
+      background: #e9fff0;
 
-      /* 葉模様（header と同じ leaf.jpg）をうっすら重ねる */
-      mask-image: url("leaf.jpg");
-      mask-size: cover;
-      mask-repeat: no-repeat;
+      /* 葉模様を透過で重ねる（header と同じ leaf.jpg） */
+      background-image: url("leaf.jpg");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.35; /* ← うっすら見えるレベルに調整 */
 
-      opacity: 0.55; /* ← さらに濃くして “見えるように” */
       pointer-events: none;
     }
 
-    /* ▼ container：緑をさらに薄くし、header と同じ葉背景を透過で適用 */
+    /* ▼ container：薄い緑 + 葉模様（header と統一） */
     .container,
     .normal-section {
       max-width: 900px;
@@ -121,7 +116,6 @@
         ),
         url("leaf.jpg") right bottom / 240px no-repeat;
 
-      opacity: 0.98;
       border-radius: 12px;
       color: #003300;
       box-shadow: 0 4px 14px rgba(0,0,0,0.08);
