@@ -16,20 +16,20 @@
       line-height: 1.8;
     }
 
-    /* ▼ header の葉背景はそのまま。余白だけ調整 */
+    /* ▼ header の葉背景を巨大化して nav の裏まで覆う */
     header {
       background:
         linear-gradient(180deg,rgba(255,255,255,0.0) 0%,rgba(255,255,255,0.35) 40%,rgba(255,255,255,0.55) 70%,rgba(255,255,255,0.0) 100%),
         url("leaf.jpg") center/cover no-repeat;
-      padding: 20px 0 5px; /* ← 40px → 5px に変更（隙間を狭くする） */
+      padding: 20px 0 200px; /* ← ここを大きくすることで nav の裏まで背景が伸びる */
       text-align: center;
       position: relative;
       z-index: 1;
     }
 
-    header img.logo {
+    header img {
       display: block;
-      margin: 0 auto 10px auto; /* ← 20px → 10px に変更 */
+      margin: 0 auto;
       width: 90%;
       max-width: 800px;
       transform: scale(1.15) translateX(-14px);
@@ -37,23 +37,28 @@
       z-index: 5;
     }
 
-    /* ▼ 写真とリンクは header 内 */
-    .nav-area {
+    /* ▼ nav は透明にして header 背景をそのまま見せる */
+    nav {
+      background: transparent; /* ← 背景色を完全に削除 */
+      padding: 14px;
+      text-align: center;
       position: relative;
+      margin-top: -150px; /* ← 写真を header 背景の上に引き上げる */
       z-index: 10;
-      margin-top: 0;
     }
 
-    .nav-area img {
+    /* ▼ 写真は header 背景の上に置く */
+    nav img {
       display: block;
       margin: 0 auto 20px auto;
       border-radius: 15px;
       box-shadow: 0 4px 18px rgba(0,0,0,0.25);
-      width: 90%;
-      max-width: 800px;
+      position: relative;
+      z-index: 20;
     }
 
-    .nav-area a {
+    /* ▼ リンク文字は濃い緑で常に見える */
+    nav a {
       color: #006633;
       margin: 0 18px;
       text-decoration: none;
@@ -61,14 +66,17 @@
       white-space: nowrap;
       display: inline-block;
       margin-bottom: 6px;
-      font-size: 1.1em;
+      position: relative;
+      z-index: 20;
     }
 
+    /* ▼ 下のエリア（葉背景なし） */
     .container,
     .normal-section {
       max-width: 900px;
       margin: 40px auto 20px;
       padding: 24px;
+
       background: #ffffff;
       border-radius: 12px;
       border-left: 6px solid #4fcf8a;
@@ -105,17 +113,17 @@
 <body>
 
   <header>
-    <img src="IMG_2354.png" class="logo" alt="阿部整形外科ロゴ">
-
-    <div class="nav-area">
-      <img src="robi.jpg" alt="ロビー">
-      <a href="news.html">お知らせ</a>
-      <a href="shinryo.html">診療案内</a>
-      <a href="doctor.html">医師紹介</a>
-      <a href="facility.html">施設紹介</a>
-      <a href="access.html">アクセス</a>
-    </div>
+    <img src="IMG_2354.png" alt="阿部整形外科ロゴ">
   </header>
+
+  <nav>
+    <img src="robi.jpg" alt="ロビー">
+    <a href="news.html">お知らせ</a>
+    <a href="shinryo.html">診療案内</a>
+    <a href="doctor.html">医師紹介</a>
+    <a href="facility.html">施設紹介</a>
+    <a href="access.html">アクセス</a>
+  </nav>
 
   <div class="container">
     <h2>お知らせ（最新5件）</h2>
