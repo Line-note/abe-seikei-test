@@ -12,52 +12,73 @@
         body { 
             font-family: "Shippori Mincho", serif;
             margin: 0; 
-            background: #f9fff9; /* 超薄い緑 */
+            background: #f4fff6; /* index と同じ淡い緑 */
+            color: #003300;
         }
 
+        /* ▼ ヘッダー：深緑 → 中緑のグラデーション */
         header { 
-            background: #2e8b57; 
+            background: linear-gradient(90deg, #1f6b3f, #2f8f5a, #3fae6c);
             color: white; 
-            padding: 25px; 
+            padding: 28px 0; 
             text-align: center; 
+            font-size: 1.6em;
+            letter-spacing: 2px;
         }
 
+        /* ▼ nav：index と同じ薄緑背景＋濃い緑文字 */
         nav { 
-            background: #3fae6c; 
-            padding: 12px; 
+            background: #e9fff0; 
+            padding: 14px; 
             text-align: center; 
         }
 
         nav a { 
-            color: white; 
+            color: #006633; 
             margin: 0 18px; 
             text-decoration: none; 
-            font-weight: bold; 
+            font-weight: 700;
+            white-space: nowrap;
         }
 
+        /* ▼ コンテナ：index と同じ白＋左右の緑ライン＋影 */
         .container { 
             max-width: 900px; 
-            margin: auto; 
-            padding: 20px; 
-            background: #f4fff4; /* 極薄い緑 */
-            border-radius: 10px;
+            margin: 40px auto; 
+            padding: 28px; 
+            background: #ffffff;
+            border-radius: 12px;
+
+            border-left: 6px solid #4fcf8a;  /* index と同じ */
+            border-right: 6px solid #4fcf8a;
+
+            box-shadow: 0 4px 18px rgba(0,0,0,0.12); /* index より少し強めで上品に */
         }
 
+        /* ▼ 見出し：緑の階調を追加して上品に */
         h2 { 
-            border-left: 6px solid #1f6b3f; /* 濃い緑 */
-            padding-left: 10px; 
+            padding-left: 12px; 
+            font-weight: 700;
             color: #1f6b3f;
+            border-left: 6px solid #1f6b3f;
+            margin-bottom: 20px;
         }
 
         ul { 
-            line-height: 1.8; 
+            line-height: 1.9; 
+            padding-left: 20px;
         }
 
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* ▼ フッター：深緑グラデーション（index と統一） */
         footer { 
-            background: #2e8b57; 
+            background: linear-gradient(90deg,#1f6b3f,#2f8f5a,#3fae6c);
             color: white; 
             text-align: center; 
-            padding: 15px; 
+            padding: 18px; 
             margin-top: 40px; 
         }
     </style>
@@ -65,7 +86,7 @@
 <body>
 
 <header>
-    <h1>お知らせ</h1>
+    お知らせ
 </header>
 
 <nav>
