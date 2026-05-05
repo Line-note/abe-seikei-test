@@ -1,48 +1,168 @@
-/* ▼ nav：背景を完全に 1 色の薄い緑に統一 */
-nav {
-  background: #e9fff0;
-  padding: 14px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>阿部整形外科 - ホーム</title>
 
-/* ▼ nav 内のリンク（前面に出す） */
-nav a {
-  color: #ffffff;
-  margin: 0 18px;
-  text-decoration: none;
-  font-weight: 700;
-  position: relative;
-  z-index: 3;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
 
-/* ▼ 写真（中央配置） */
-nav img {
-  display: block;
-  margin: 0 auto 20px auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
-  position: relative;
-  z-index: 3;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: "Shippori Mincho", serif;
+      background: linear-gradient(180deg,#f9fff9 0%,#e8fff0 30%,#d8ffe8 60%,#f9fff9 100%);
+      color: #003300;
+      line-height: 1.8;
+    }
 
-/* ▼ nav の下の背景（ズレない・リンクに干渉しない・上に寄せる） */
-nav::after {
-  content: "";
-  position: absolute;
-  top: 100%;        /* ← nav の真下にぴったり配置（ズレ防止） */
-  left: 0;
-  width: 100%;
-  height: 120px;    /* ← 下のお知らせにかからない高さに調整 */
+    /* ▼ ヘッダー */
+    header {
+      background:
+        linear-gradient(180deg,rgba(255,255,255,0.0) 0%,rgba(255,255,255,0.35) 40%,rgba(255,255,255,0.55) 70%,rgba(255,255,255,0.0) 100%),
+        url("leaf.jpg") center/cover no-repeat;
+      padding: 20px 0 5px;
+      text-align: center;
+    }
 
-  background: #e9fff0; /* ← 完全に 1 色の薄い緑 */
-  background-image: url("leaf.jpg");
-  background-size: 100% auto;   /* ← 横幅いっぱい、縦は自動 */
-  background-position: top center; /* ← 葉模様を上に寄せる */
-  background-repeat: no-repeat;
+    header img {
+      display: block;
+      margin: 0 auto;
+      width: 90%;
+      max-width: 800px;
+      transform: scale(1.15) translateX(-14px);
+    }
 
-  opacity: 0.40;    /* ← うっすら見えるレベルに調整 */
-  z-index: -1;      /* ← リンクに干渉しない（最重要） */
-  pointer-events: none;
-}
+    /* ▼ nav（背景は完全に1色の薄い緑） */
+    nav {
+      background: #e9fff0;
+      padding: 14px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav a {
+      color: #ffffff;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 700;
+      position: relative;
+      z-index: 3;
+    }
+
+    nav img {
+      display: block;
+      margin: 0 auto 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+      position: relative;
+      z-index: 3;
+    }
+
+    /* ▼ nav 下の葉背景（ズレない・リンクに干渉しない・上に寄せる） */
+    nav::after {
+      content: "";
+      position: absolute;
+      top: 100%;      /* ← nav の真下に固定 */
+      left: 0;
+      width: 100%;
+      height: 130px;  /* ← 下のエリアにかからない高さ */
+
+      background: #e9fff0; /* ← 完全に1色の薄い緑 */
+      background-image: url("leaf.jpg");
+      background-size: 100% auto;
+      background-position: top center;
+      background-repeat: no-repeat;
+
+      opacity: 0.38;  /* ← うっすら見える */
+      z-index: -1;    /* ← リンクに干渉しない */
+      pointer-events: none;
+    }
+
+    /* ▼ 下のエリア（お知らせ・診療案内） */
+    .container,
+    .normal-section {
+      max-width: 900px;
+      margin: 60px auto 20px;
+      padding: 24px;
+
+      background:
+        linear-gradient(135deg,rgba(255,255,255,0.98) 0%,rgba(245,255,245,0.98) 40%,rgba(235,255,240,0.98) 100%),
+        url("leaf.jpg") right bottom / 240px no-repeat;
+
+      border-radius: 12px;
+      border-left: 6px solid #4fcf8a;
+      border-right: 6px solid #4fcf8a;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #1f6b3f;
+      border-left: 6px solid #1f6b3f;
+      padding-left: 10px;
+      font-weight: 700;
+    }
+
+    .new-badge {
+      background: linear-gradient(135deg,#ffb14a,#e39a3b);
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.8em;
+      font-weight: bold;
+    }
+
+    footer {
+      background: linear-gradient(90deg,#1f6b3f,#2f8f5a,#3fae6c);
+      color: white;
+      text-align: center;
+      padding: 18px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="IMG_2354.png" alt="阿部整形外科ロゴ">
+  </header>
+
+  <nav>
+    <img src="robi.jpg" alt="ロビー">
+    <a href="news.html">お知らせ</a>
+    <a href="shinryo.html">診療案内</a>
+    <a href="doctor.html">医師紹介</a>
+    <a href="facility.html">施設紹介</a>
+    <a href="access.html">アクセス</a>
+  </nav>
+
+  <div class="container">
+    <h2>お知らせ（最新5件）</h2>
+    <ul>
+      <li><a href="news.html">4月4日土曜日休診のお知らせ</a> <span class="new-badge">NEW!</span></li>
+      <li>令和2年8月に骨密度測定器を最新にしました</li>
+      <li><a href="access.html#parking">提携駐車場のご案内</a></li>
+      <li>理学療法は専門的な運動療法を行っております</li>
+      <li>ホームページ稼働し始めました</li>
+    </ul>
+  </div>
+
+  <div class="normal-section">
+    <h2>診療時間</h2>
+    <p>月〜金：9:00〜12:30 / 15:00〜18:30<br>
+       土曜：9:00〜12:30<br>
+       休診日：木曜・日曜・祝日</p>
+
+    <h2>所在地</h2>
+    <p>〒157-0073 東京都世田谷区砧3-4-3 グリーンモール砧1F<br>
+       電話：03-5727-3725</p>
+  </div>
+
+  <footer>
+    © 2026 阿部整形外科
+  </footer>
+
+</body>
+</html>
