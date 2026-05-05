@@ -11,11 +11,11 @@
         body { 
             font-family: "Shippori Mincho", serif;
             margin: 0; 
-            background: #f4fff6; /* index と統一 */
+            background: #f4fff6;
             color: #003300;
         }
 
-        /* ▼ 葉模様を中央に寄せてしっかり見せる＋背景エリアは半分の高さ */
+        /* ▼ 葉模様を中央に寄せてしっかり見せる */
         header { 
             background:
                 linear-gradient(180deg,
@@ -25,7 +25,8 @@
                     rgba(255,255,255,0.50) 100%
                 ),
                 url("leaf.jpg") center 80% / cover no-repeat;
-            padding: 35px 0 40px; /* ← 高さを半分に */
+
+            padding: 35px 0 40px;
             text-align: center; 
             color: #1f6b3f;
             font-size: 1.8em;
@@ -33,22 +34,30 @@
             letter-spacing: 2px;
         }
 
-        /* ▼ nav：index と同じ薄緑背景＋濃い緑文字 */
+        /* ▼ nav：2段でも上下の列が完全に揃う */
         nav { 
             background: #e9fff0; 
             padding: 14px; 
-            text-align: center; 
+            text-align: center;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px 18px; /* 上下10px・左右18px */
         }
 
         nav a { 
             color: #006633; 
-            margin: 0 18px; 
             text-decoration: none; 
             font-weight: 700;
             white-space: nowrap;
+
+            display: inline-block;
+            width: 110px;   /* ← 全リンクを同じ幅にして揃える */
+            text-align: center;
         }
 
-        /* ▼ コンテナ：index と同じ白＋左右の緑ライン＋影 */
+        /* ▼ コンテナ：index/news と統一 */
         .container { 
             max-width: 900px; 
             margin: 40px auto; 
