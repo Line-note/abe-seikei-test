@@ -27,14 +27,14 @@
       z-index: 1;
     }
 
-    /* ▼ ロゴをさらに下へ（隙間ほぼゼロ） */
+    /* ▼ ロゴをさらに下へ＋少し大きく */
     header img.logo {
       display: block;
       margin: 0 auto 0px auto;
       width: 90%;
       max-width: 800px;
-      transform: scale(1.15) translateX(-14px) translateY(55px);
-      /* ↑ 35px → 55px に変更（ロゴをさらに下へ） */
+      transform: scale(1.22) translateX(-14px) translateY(67px);
+      /* ↑ scale:1.22（6%拡大） / translateY:67px（さらに下へ12px） */
       position: relative;
       z-index: 5;
     }
@@ -43,7 +43,7 @@
     .nav-area {
       position: relative;
       z-index: 10;
-      margin-top: 0px; /* ← 写真の位置は固定 */
+      margin-top: 0px;
     }
 
     .nav-area img {
