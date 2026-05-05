@@ -1,198 +1,177 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>阿部整形外科 - ホーム</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阿部整形外科 - ホーム</title>
 
-  <!-- 医療サイト向けの清潔感あるフォント -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --green-dark: #1f6b3f;
-      --green-mid: #3fae6c;
-      --green-light: #e9f7ef;
-      --text-main: #1a1a1a;
-      --text-sub: #3a3a3a;
-      --radius: 14px;
-      --shadow: 0 4px 18px rgba(0,0,0,0.08);
-    }
+<style>
+  :root {
+    --green-dark: #0f5132;
+    --green-main: #198754;
+    --green-light: #d1f2e0;
+    --green-soft: #e9f7ef;
+    --green-grad1: #1b7f5a;
+    --green-grad2: #3fd19a;
+    --text-main: #1a1a1a;
+    --radius: 18px;
+    --shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
 
-    body {
-      margin: 0;
-      font-family: "Noto Sans JP", sans-serif;
-      background-color: #ffffff;
-      color: var(--text-main);
-      line-height: 1.8;
-    }
+  body {
+    margin: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    background: #f7fdf9;
+    color: var(--text-main);
+    line-height: 1.8;
+  }
 
-    /* =========================
-       ヘッダー（ロゴ＋背景）
-    ========================== */
-    header {
-      background: url("leaf.jpg") center/cover no-repeat;
-      padding: 80px 20px;
-      text-align: center;
-    }
+  /* =========================
+     ヒーローヘッダー（大幅刷新）
+  ========================== */
+  header {
+    background: linear-gradient(135deg, var(--green-grad1), var(--green-grad2));
+    padding: 70px 20px;
+    text-align: center;
+    color: white;
+  }
 
-    header img {
-      width: 60%;
-      max-width: 420px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
+  header img {
+    width: 55%;
+    max-width: 380px;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+  }
 
-    /* =========================
-       ナビゲーション
-    ========================== */
-    nav {
-      background-color: var(--green-dark);
-      padding: 14px 0;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+  /* =========================
+     ナビゲーション（モダン化）
+  ========================== */
+  nav {
+    background: white;
+    padding: 14px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
 
-    nav a {
-      color: #ffffff;
-      margin: 0 18px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05rem;
-      transition: 0.2s;
-    }
+  nav a {
+    color: var(--green-dark);
+    margin: 0 18px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: 0.2s;
+  }
 
-    nav a:hover {
-      opacity: 0.7;
-    }
+  nav a:hover {
+    color: var(--green-main);
+  }
 
-    /* ロビー写真（ナビ下に配置） */
-    .nav-photo {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      display: block;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin-top: 20px;
-    }
+  /* =========================
+     カード型セクション（大幅刷新）
+  ========================== */
+  .section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 35px 30px;
+    border-radius: var(--radius);
+    background: white;
+    box-shadow: var(--shadow);
+  }
 
-    /* =========================
-       セクション共通
-    ========================== */
-    .section {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 40px 30px;
-      border-radius: var(--radius);
-      background: var(--green-light);
-      box-shadow: var(--shadow);
-    }
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--green-dark);
+    margin-bottom: 20px;
+    border-left: 6px solid var(--green-main);
+    padding-left: 12px;
+  }
 
-    h2 {
-      color: var(--green-dark);
-      font-weight: 600;
-      border-left: 6px solid var(--green-dark);
-      padding-left: 12px;
-      margin-bottom: 25px;
-      font-size: 1.4rem;
-    }
+  /* =========================
+     お知らせのカード
+  ========================== */
+  .news-item {
+    background: var(--green-soft);
+    padding: 14px 18px;
+    border-radius: var(--radius);
+    margin-bottom: 12px;
+    border-left: 6px solid var(--green-main);
+  }
 
-    /* NEWバッジ */
-    .new-badge {
-      background: #E39A3B;
-      color: white;
-      font-size: 0.8em;
-      font-weight: bold;
-      padding: 2px 6px;
-      border-radius: 4px;
-      margin-left: 8px;
-    }
+  .news-item a {
+    color: var(--green-dark);
+    font-weight: 600;
+    text-decoration: none;
+  }
 
-    /* =========================
-       フッター
-    ========================== */
-    footer {
-      background: var(--green-dark);
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 60px;
-      font-size: 0.9rem;
-    }
+  /* =========================
+     フッター
+  ========================== */
+  footer {
+    background: var(--green-dark);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+  }
 
-    /* =========================
-       スマホ最適化
-    ========================== */
-    @media (max-width: 600px) {
-      nav a {
-        margin: 0 10px;
-        font-size: 0.95rem;
-      }
-
-      .section {
-        padding: 30px 20px;
-      }
-
-      header img {
-        width: 80%;
-      }
-    }
-  </style>
+  /* =========================
+     スマホ最適化
+  ========================== */
+  @media (max-width: 600px) {
+    header img { width: 80%; }
+    nav a { margin: 0 10px; font-size: 0.95rem; }
+    .section { padding: 25px 20px; }
+  }
+</style>
 </head>
 
 <body>
 
-  <!-- ヘッダー（ロゴ） -->
-  <header>
-    <img src="IMG_2354.png" alt="阿部整形外科ロゴ">
-  </header>
+<header>
+  <img src="IMG_2354.png" alt="阿部整形外科ロゴ">
+</header>
 
-  <!-- ナビゲーション -->
-  <nav>
-    <a href="news.html">お知らせ</a>
-    <a href="shinryo.html">診療案内</a>
-    <a href="doctor.html">医師紹介</a>
-    <a href="facility.html">施設紹介</a>
-    <a href="access.html">アクセス</a>
-  </nav>
+<nav>
+  <a href="news.html">お知らせ</a>
+  <a href="shinryo.html">診療案内</a>
+  <a href="doctor.html">医師紹介</a>
+  <a href="facility.html">施設紹介</a>
+  <a href="access.html">アクセス</a>
+</nav>
 
-  <!-- ロビー写真 -->
-  <img src="robi.jpg" alt="ロビー写真" class="nav-photo">
+<div class="section">
+  <h2>お知らせ（最新5件）</h2>
 
-  <!-- お知らせ -->
-  <div class="section">
-    <h2>お知らせ（最新5件）</h2>
-    <ul>
-      <li><a href="news.html">4月4日土曜日休診のお知らせ</a> <span class="new-badge">NEW!</span></li>
-      <li>令和2年8月に骨密度測定器を最新にしました</li>
-      <li><a href="access.html#parking">提携駐車場のご案内</a></li>
-      <li>理学療法は専門的な運動療法を行っております</li>
-      <li>ホームページ稼働し始めました</li>
-    </ul>
-  </div>
+  <div class="news-item"><a href="news.html">4月4日土曜日休診のお知らせ</a></div>
+  <div class="news-item">令和2年8月に骨密度測定器を最新にしました</div>
+  <div class="news-item"><a href="access.html#parking">提携駐車場のご案内</a></div>
+  <div class="news-item">理学療法は専門的な運動療法を行っております</div>
+  <div class="news-item">ホームページ稼働し始めました</div>
+</div>
 
-  <!-- 診療時間・所在地 -->
-  <div class="section">
-    <h2>診療時間</h2>
-    <p>
-      月〜金：9:00〜12:30 / 15:00〜18:30<br>
-      土曜：9:00〜12:30<br>
-      休診日：木曜・日曜・祝日
-    </p>
+<div class="section">
+  <h2>診療時間</h2>
+  <p>
+    月〜金：9:00〜12:30 / 15:00〜18:30<br>
+    土曜：9:00〜12:30<br>
+    休診日：木曜・日曜・祝日
+  </p>
 
-    <h2>所在地</h2>
-    <p>
-      〒157-0073 東京都世田谷区砧3-4-3 グリーンモール砧1F<br>
-      電話：03-5727-3725
-    </p>
-  </div>
+  <h2>所在地</h2>
+  <p>
+    〒157-0073 東京都世田谷区砧3-4-3 グリーンモール砧1F<br>
+    電話：03-5727-3725
+  </p>
+</div>
 
-  <footer>
-    © 2026 阿部整形外科
-  </footer>
+<footer>
+  © 2026 阿部整形外科
+</footer>
 
 </body>
 </html>
