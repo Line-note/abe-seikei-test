@@ -11,16 +11,14 @@
     body {
       margin: 0;
       font-family: "Shippori Mincho", serif;
-      background: linear-gradient(180deg,#f9fff9 0%,#e8fff0 30%,#d8ffe8 60%,#f9fff9 100%);
+      background: #f4fff6; /* 全体の薄い緑 */
       color: #003300;
       line-height: 1.8;
     }
 
-    /* ▼ ヘッダー */
+    /* ▼ ヘッダー（葉背景は削除） */
     header {
-      background:
-        linear-gradient(180deg,rgba(255,255,255,0.0) 0%,rgba(255,255,255,0.35) 40%,rgba(255,255,255,0.55) 70%,rgba(255,255,255,0.0) 100%),
-        url("leaf.jpg") center/cover no-repeat;
+      background: #e9fff0; /* 薄い緑の単色 */
       padding: 20px 0 5px;
       text-align: center;
     }
@@ -33,25 +31,13 @@
       transform: scale(1.15) translateX(-14px);
     }
 
-    /* ▼ nav（背景は nav::before に移動） */
+    /* ▼ nav（背景は1色のみ。葉なし） */
     nav {
-      background: transparent; /* ← nav 自体は透明にする */
+      background: #e9fff0; /* ← 完全に1色の薄い緑 */
       padding: 14px;
       text-align: center;
       position: relative;
       z-index: 10; /* ← nav の中身を最前面に */
-    }
-
-    /* ▼ nav の背景（1色の薄い緑） */
-    nav::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #e9fff0; /* ← 完全に1色の薄い緑 */
-      z-index: 1; /* ← nav の背景として正しく機能 */
     }
 
     nav a {
@@ -72,37 +58,16 @@
       z-index: 20; /* ← 背景より前 */
     }
 
-    /* ▼ nav の下の葉模様（ズレない・リンクに干渉しない） */
-    nav::after {
-      content: "";
-      position: absolute;
-      top: 100%; /* ← nav の真下に固定 */
-      left: 0;
-      width: 100%;
-      height: 130px;
+    /* ▼ nav::after は完全削除（葉背景を消すため） */
 
-      background: #e9fff0;
-      background-image: url("leaf.jpg");
-      background-size: 100% auto;
-      background-position: top center;
-      background-repeat: no-repeat;
-
-      opacity: 0.38;
-      z-index: 1; /* ← nav::before と同じ層 */
-      pointer-events: none;
-    }
-
-    /* ▼ 下のエリア（お知らせ・診療案内） */
+    /* ▼ 下のエリア（葉背景も削除） */
     .container,
     .normal-section {
       max-width: 900px;
-      margin: 60px auto 20px;
+      margin: 40px auto 20px;
       padding: 24px;
 
-      background:
-        linear-gradient(135deg,rgba(255,255,255,0.98) 0%,rgba(245,255,245,0.98) 40%,rgba(235,255,240,0.98) 100%),
-        url("leaf.jpg") right bottom / 240px no-repeat;
-
+      background: #ffffff; /* ← 白背景に統一 */
       border-radius: 12px;
       border-left: 6px solid #4fcf8a;
       border-right: 6px solid #4fcf8a;
