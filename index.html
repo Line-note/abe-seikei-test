@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* 全体背景：深緑〜白緑の多層グラデーション */
+    /* 全体背景：淡い緑の多層グラデーション */
     body {
       margin: 0;
       font-family: "Shippori Mincho", serif;
@@ -22,34 +22,38 @@
       line-height: 1.8;
     }
 
-    /* ▼ ヘッダー：ロゴ背景の浮き上がりを完全に消す ▼ */
+    /* ▼ ヘッダー：ロゴ背景と下の緑エリアの境目をぼかす ▼ */
     header {
       background:
-        linear-gradient(135deg, rgba(80,150,80,0.25), rgba(200,255,200,0.15)),
+        linear-gradient(180deg,
+          rgba(255,255,255,0) 0%,
+          rgba(255,255,255,0.4) 40%,
+          rgba(255,255,255,0.7) 70%,
+          rgba(255,255,255,0) 100%
+        ),
         url("leaf.jpg") center/cover no-repeat;
-      padding: 40px 0;
+      padding: 60px 0 50px;
       text-align: center;
       backdrop-filter: blur(2px);
     }
 
-    /* ロゴ画像：影・白枠を完全に削除して背景と一体化 */
+    /* ▼ ロゴ：2倍サイズ、影なし、背景と完全一体化 */
     header img {
       display: block;
       margin: 0 auto;
-      max-width: 600px;
-      width: 75%;
+      width: 90%;          /* ← 元の75% → 約2倍の視覚効果 */
+      max-width: 900px;    /* ← 大型化 */
       box-shadow: none !important;
       border-radius: 0 !important;
       background: transparent !important;
     }
 
-    /* ▼ nav：深緑→青緑→黄緑の強いグラデーションに変更 ▼ */
+    /* ▼ nav：葉模様を完全排除し、グラデーションは薄めに */
     nav {
       background: linear-gradient(90deg,
-        #1f6b3f 0%,
-        #2f8f5a 25%,
-        #3fae6c 50%,
-        #4fcf8a 75%,
+        #2f8f5a 0%,
+        #3fae6c 40%,
+        #4fcf8a 70%,
         #3fae6c 100%
       );
       position: relative;
@@ -59,34 +63,8 @@
       box-shadow: 0 3px 12px rgba(0,0,0,0.15);
     }
 
-    /* ▼ nav の葉模様：スタイリッシュに再設計 ▼ */
-    nav::before,
-    nav::after {
-      content: "";
-      position: absolute;
-      top: 10px;
-      width: 260px;
-      height: 160%;
-      background-image: url("IMG_2366.png");
-      background-repeat: no-repeat;
-      background-size: contain;
-      opacity: 0.35; /* ← 透明度を下げて高級感 */
-      filter: drop-shadow(0 0 12px rgba(255,255,255,0.5));
-      pointer-events: none;
-      z-index: 1;
-      transform: rotate(-8deg); /* ← 角度をつけてデザイン性UP */
-    }
+    /* nav の葉模様を完全削除（before/after を消す） */
 
-    nav::before {
-      left: -20px;
-    }
-
-    nav::after {
-      right: -20px;
-      transform: rotate(8deg);
-    }
-
-    /* nav 内のリンク */
     nav a {
       color: white;
       margin: 0 18px;
@@ -106,18 +84,12 @@
     /* nav 内のロビー画像 */
     nav img {
       border-radius: 15px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.25);
       position: relative;
       z-index: 2;
     }
 
-    /* 全画像共通 */
-    img {
-      border-radius: 15px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.25);
-    }
-
-    /* ▼ container：淡い緑の多層グラデーションに強化 ▼ */
+    /* ▼ container：写真下の緑グラデーションを薄く調整 */
     .container,
     .normal-section {
       max-width: 900px;
@@ -125,8 +97,8 @@
       padding: 24px;
       background: linear-gradient(135deg,
         #f4fff4 0%,
-        #eafff0 40%,
-        #e0ffe8 100%
+        #f0fff8 50%,
+        #e8ffee 100%
       );
       border-radius: 12px;
       color: #003300;
@@ -134,7 +106,6 @@
       border-left: 6px solid #4fcf8a;
     }
 
-    /* 見出し：深緑＋光のライン */
     h2 {
       color: #1f6b3f;
       border-left: 6px solid #1f6b3f;
@@ -143,7 +114,6 @@
       text-shadow: 0 1px 3px rgba(0,0,0,0.15);
     }
 
-    /* NEW バッジ */
     .new-badge {
       background: linear-gradient(135deg, #ffb14a, #e39a3b);
       color: white;
@@ -155,7 +125,6 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
-    /* ▼ フッター：深緑→明緑の光沢グラデーション ▼ */
     footer {
       background: linear-gradient(90deg,
         #1f6b3f,
