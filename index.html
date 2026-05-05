@@ -16,33 +16,34 @@
       line-height: 1.8;
     }
 
-    /* ▼ 背景は元の高さに戻す（つながり復活） */
+    /* ▼ 背景はそのまま（つながり維持） */
     header {
       background:
         linear-gradient(180deg,rgba(255,255,255,0.0) 0%,rgba(255,255,255,0.35) 40%,rgba(255,255,255,0.55) 70%,rgba(255,255,255,0.0) 100%),
         url("leaf.jpg") center/cover no-repeat;
-      padding: 20px 0 40px; /* ← 元の40pxに戻す（背景のつながり復活） */
+      padding: 20px 0 40px;
       text-align: center;
       position: relative;
       z-index: 1;
     }
 
-    /* ▼ ロゴの下の余白を極限まで詰める */
+    /* ▼ ロゴを下に下げる（translateY 追加） */
     header img.logo {
       display: block;
-      margin: 0 auto 0px auto; /* ← 3px → 0px に変更（隙間ゼロ） */
+      margin: 0 auto 0px auto;
       width: 90%;
       max-width: 800px;
-      transform: scale(1.15) translateX(-14px);
+      transform: scale(1.15) translateX(-14px) translateY(12px); 
+      /* ↑ ここが最重要：ロゴを下へ12px */
       position: relative;
       z-index: 5;
     }
 
-    /* ▼ 写真を上に引き上げて隙間を埋める */
+    /* ▼ 写真は動かさない */
     .nav-area {
       position: relative;
       z-index: 10;
-      margin-top: -25px; /* ← 写真を上に引き上げる（最重要） */
+      margin-top: -10px; /* ← ロゴを下げた分だけ微調整（自然に詰まる） */
     }
 
     .nav-area img {
