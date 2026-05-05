@@ -25,9 +25,8 @@
                     rgba(255,255,255,0.50) 100%
                 ),
                 url("leaf.jpg") center 80% / cover no-repeat;
-            /* ↑ 最重要：center 80% で葉模様を大きく下へ寄せる */
 
-            padding: 35px 0 40px; /* ← 高さを半分に縮小 */
+            padding: 35px 0 40px;
             text-align: center; 
             color: #1f6b3f;
             font-size: 1.8em;
@@ -35,18 +34,27 @@
             letter-spacing: 2px;
         }
 
+        /* ▼ 2段になっても上下の列の左端が揃う nav */
         nav { 
             background: #e9fff0; 
             padding: 14px; 
-            text-align: center; 
+            text-align: center;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px 18px; /* 上下10px・左右18px */
         }
 
         nav a { 
             color: #006633; 
-            margin: 0 18px; 
             text-decoration: none; 
             font-weight: 700;
             white-space: nowrap;
+
+            display: inline-block;
+            width: 110px;   /* ← 全リンクを同じ幅にして揃える */
+            text-align: center;
         }
 
         .container { 
