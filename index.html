@@ -22,7 +22,7 @@
       line-height: 1.8;
     }
 
-    /* ▼ ヘッダー：背景と下の緑の境目を曖昧にぼかす */
+    /* ▼ ヘッダー：背景エリアを縮小し、境目を曖昧にぼかす */
     header {
       background:
         linear-gradient(180deg,
@@ -32,24 +32,24 @@
           rgba(255,255,255,0.0) 100%
         ),
         url("leaf.jpg") center/cover no-repeat;
-      padding: 40px 0 20px;
+      padding: 25px 0 10px;  /* ← 高さを 2/3 に縮小 */
       text-align: center;
       backdrop-filter: blur(2px);
     }
 
-    /* ▼ ロゴ画像：配置そのままに “2倍の大きさ” */
+    /* ▼ ロゴ画像：さらに大きく（前回より +40%） */
     header img {
       display: block;
       margin: 0 auto;
-      width: 150%;          /* ← 元の75% → 正確に2倍 */
-      max-width: 1200px;    /* ← 大型化 */
-      transform: scale(1.2); /* ← 視覚的にさらに大きく見せる */
+      width: 180%;          /* ← 前回150% → さらに拡大 */
+      max-width: 1400px;    /* ← 大型化 */
+      transform: scale(1.35); /* ← 視覚的にさらに大きく */
       box-shadow: none !important;
       border-radius: 0 !important;
       background: transparent !important;
     }
 
-    /* ▼ nav：葉模様を完全排除し、グラデーションは薄めに */
+    /* ▼ nav：葉模様なし、グラデーションはそのまま */
     nav {
       background: linear-gradient(90deg,
         #2f8f5a 0%,
@@ -61,8 +61,6 @@
       text-align: center;
       box-shadow: 0 3px 12px rgba(0,0,0,0.15);
     }
-
-    /* nav の葉模様は完全削除（before/after を置かない） */
 
     nav a {
       color: white;
@@ -84,21 +82,27 @@
       margin-bottom: 20px;
     }
 
-    /* ▼ container：緑グラデーションを “薄く” 調整 */
+    /* ▼ container：緑をさらに薄くし、葉の淡いグラデーションを追加 */
     .container,
     .normal-section {
       max-width: 900px;
       margin: 20px auto;
       padding: 24px;
-      background: linear-gradient(135deg,
-        #f8fff8 0%,
-        #f3fff6 50%,
-        #ecffee 100%
-      );
+
+      background:
+        linear-gradient(135deg,
+          rgba(255,255,255,0.8) 0%,
+          rgba(240,255,240,0.8) 40%,
+          rgba(230,255,235,0.8) 100%
+        ),
+        url("IMG_2366.png") right bottom / 180px no-repeat; /* ← 葉の淡い背景を追加 */
+
       border-radius: 12px;
       color: #003300;
       box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-      border-left: 6px solid #4fcf8a;
+
+      border-left: 6px solid #4fcf8a;  /* 左の緑線 */
+      border-right: 6px solid #4fcf8a; /* ← 右にも追加（左右対称） */
     }
 
     h2 {
