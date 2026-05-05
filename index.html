@@ -32,14 +32,15 @@
       z-index: 1;
     }
 
-    /* ▼ ロゴをさらに下へ＋少し大きく（1.27 に拡大） */
+    /* ▼ ロゴをさらに大きく（1.32）＋ 写真との距離を少し空ける（translateY:60px） */
     header img.logo {
       display: block;
       margin: 0 auto 0px auto;
       width: 90%;
       max-width: 800px;
-      transform: scale(1.27) translateX(-14px) translateY(67px);
-      /* ↑ scale:1.27（前回より +4% 拡大） */
+      transform: scale(1.32) translateX(-14px) translateY(60px);
+      /* ↑ scale:1.32（前回より +5% 拡大）
+         ↑ translateY:60px（写真との距離を少し広げる） */
       position: relative;
       z-index: 5;
     }
