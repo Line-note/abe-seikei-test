@@ -5,24 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お知らせ - 阿部整形外科</title>
 
-    <!-- しっぽり明朝 -->
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         body { 
             font-family: "Shippori Mincho", serif;
             margin: 0; 
-            background: #f4fff6; /* index と同じ淡い緑 */
+            background: #f4fff6; /* index と同じ */
             color: #003300;
         }
 
-        /* ▼ ヘッダー：深緑 → 中緑のグラデーション */
+        /* ▼ index と同じ葉模様背景（少し濃くして見えるように調整） */
         header { 
-            background: linear-gradient(90deg, #1f6b3f, #2f8f5a, #3fae6c);
-            color: white; 
-            padding: 28px 0; 
+            background:
+                linear-gradient(180deg,
+                    rgba(255,255,255,0.15) 0%,
+                    rgba(255,255,255,0.25) 40%,
+                    rgba(255,255,255,0.35) 70%,
+                    rgba(255,255,255,0.65) 100%
+                ),
+                url("leaf.jpg") center/cover no-repeat;
+            padding: 45px 0 55px;
             text-align: center; 
-            font-size: 1.6em;
+            color: #1f6b3f;
+            font-size: 1.8em;
+            font-weight: 700;
             letter-spacing: 2px;
         }
 
@@ -49,13 +56,12 @@
             background: #ffffff;
             border-radius: 12px;
 
-            border-left: 6px solid #4fcf8a;  /* index と同じ */
+            border-left: 6px solid #4fcf8a;
             border-right: 6px solid #4fcf8a;
 
-            box-shadow: 0 4px 18px rgba(0,0,0,0.12); /* index より少し強めで上品に */
+            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
         }
 
-        /* ▼ 見出し：緑の階調を追加して上品に */
         h2 { 
             padding-left: 12px; 
             font-weight: 700;
@@ -73,7 +79,7 @@
             margin-bottom: 10px;
         }
 
-        /* ▼ フッター：深緑グラデーション（index と統一） */
+        /* ▼ フッター：index と同じ深緑グラデーション */
         footer { 
             background: linear-gradient(90deg,#1f6b3f,#2f8f5a,#3fae6c);
             color: white; 
