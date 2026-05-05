@@ -11,23 +11,23 @@
         body { 
             font-family: "Shippori Mincho", serif;
             margin: 0; 
-            background: #f4fff6; /* index と同じ */
+            background: #f4fff6;
             color: #003300;
         }
 
-        /* ▼ 葉模様をもっと中央に寄せて、しっかり見えるように調整 */
+        /* ▼ 葉模様を大きく中央に寄せて、しっかり見えるように調整 */
         header { 
             background:
                 linear-gradient(180deg,
-                    rgba(255,255,255,0.10) 0%,
-                    rgba(255,255,255,0.18) 35%,
-                    rgba(255,255,255,0.32) 70%,
-                    rgba(255,255,255,0.60) 100%
+                    rgba(255,255,255,0.05) 0%,
+                    rgba(255,255,255,0.12) 35%,
+                    rgba(255,255,255,0.25) 70%,
+                    rgba(255,255,255,0.55) 100%
                 ),
-                url("leaf.jpg") center 45% / cover no-repeat;
-            /* ↑ 最重要：center 45% で葉模様を中央に寄せる */
+                url("leaf.jpg") center 65% / cover no-repeat;
+            /* ↑ 最重要：center 65% で葉模様を大きく下へ寄せる */
 
-            padding: 55px 0 65px;
+            padding: 70px 0 80px; /* 葉がしっかり入るように高さを確保 */
             text-align: center; 
             color: #1f6b3f;
             font-size: 1.8em;
@@ -35,7 +35,6 @@
             letter-spacing: 2px;
         }
 
-        /* ▼ nav：index と同じ薄緑背景＋濃い緑文字 */
         nav { 
             background: #e9fff0; 
             padding: 14px; 
@@ -50,7 +49,6 @@
             white-space: nowrap;
         }
 
-        /* ▼ コンテナ：index と同じ白＋左右の緑ライン＋影 */
         .container { 
             max-width: 900px; 
             margin: 40px auto; 
@@ -81,7 +79,6 @@
             margin-bottom: 10px;
         }
 
-        /* ▼ フッター：index と同じ深緑グラデーション */
         footer { 
             background: linear-gradient(90deg,#1f6b3f,#2f8f5a,#3fae6c);
             color: white; 
