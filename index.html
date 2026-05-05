@@ -1,139 +1,204 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>整形外科クリニック</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>阿部整形外科 - ホーム</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
-    background: #f7f9f7;
-    color: #333;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
 
-/* ヘッダー */
-header {
-    background: linear-gradient(135deg, rgba(120,180,120,0.9), rgba(200,240,200,0.7));
-    backdrop-filter: blur(6px);
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header h1 {
-    margin: 0;
-    font-size: 26px;
-    color: #fff;
-    letter-spacing: 2px;
-}
-nav a {
-    margin-left: 20px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-}
+  <style>
+    /* 全体背景：淡い緑の多層グラデーション */
+    body {
+      margin: 0;
+      font-family: "Shippori Mincho", serif;
+      background: linear-gradient(180deg, #f9fff9 0%, #f3fff6 40%, #eafff0 100%);
+      color: #003300;
+      line-height: 1.8;
+    }
 
-/* メインビジュアル */
-.hero {
-    height: 380px;
-    background: url("images/main.jpg") center/cover no-repeat;
-    position: relative;
-}
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(0,80,40,0.25), rgba(200,255,200,0.25));
-}
-.hero-text {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    color: #fff;
-    font-size: 32px;
-    font-weight: 700;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
+    /* ヘッダー：leaf.jpg を活かしつつ透明感と光を追加 */
+    header {
+      background:
+        linear-gradient(135deg, rgba(80,150,80,0.35), rgba(200,255,200,0.25)),
+        url("leaf.jpg") center/cover no-repeat;
+      padding: 40px 0;
+      text-align: center;
+      backdrop-filter: blur(3px);
+    }
 
-/* セクション */
-section {
-    padding: 60px 40px;
-    max-width: 900px;
-    margin: auto;
-}
-section h2 {
-    font-size: 24px;
-    border-left: 6px solid #7bbf7b;
-    padding-left: 12px;
-    margin-bottom: 20px;
-}
+    header img {
+      display: block;
+      margin: 0 auto;
+      max-width: 600px;
+      width: 75%;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+      border-radius: 12px;
+    }
 
-/* カード */
-.card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    border-left: 6px solid #a8d8a8;
-}
+    /* nav：単色→多色グラデーションへ進化 */
+    nav {
+      background: linear-gradient(90deg,
+        #2f8f5a 0%,
+        #3fae6c 35%,
+        #4fcf8a 70%,
+        #3fae6c 100%
+      );
+      position: relative;
+      padding: 14px;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    }
 
-/* フッター */
-footer {
-    background: #e8f2e8;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    color: #666;
-}
-</style>
+    /* nav の葉模様：光の層を追加して高級感 */
+    nav::before,
+    nav::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      width: 240px;
+      height: 100%;
+      background-image: url("IMG_2366.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    nav::before {
+      left: 0px;
+      background-position: left top;
+    }
+
+    nav::after {
+      right: 15px;
+      background-position: right top;
+    }
+
+    /* nav 内のリンク */
+    nav a {
+      color: white;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+      position: relative;
+      z-index: 2;
+      transition: opacity 0.2s, text-shadow 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+      text-shadow: 0 0 8px rgba(255,255,255,0.6);
+    }
+
+    /* nav 内のロビー画像 */
+    nav img {
+      border-radius: 15px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* 全画像共通 */
+    img {
+      border-radius: 15px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+    }
+
+    /* container / normal-section：淡い緑の多層グラデーション */
+    .container,
+    .normal-section {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 24px;
+      background: linear-gradient(135deg,
+        #f4fff4 0%,
+        #f0fff8 50%,
+        #e8ffee 100%
+      );
+      border-radius: 12px;
+      color: #003300;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      border-left: 6px solid #7bcf8a;
+    }
+
+    /* 見出し：深い緑＋光のライン */
+    h2 {
+      color: #1f6b3f;
+      border-left: 6px solid #1f6b3f;
+      padding-left: 10px;
+      font-weight: 700;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+
+    /* NEW バッジ */
+    .new-badge {
+      background: linear-gradient(135deg, #ffb14a, #e39a3b);
+      color: white;
+      font-size: 0.8em;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* フッター：深緑＋光沢 */
+    footer {
+      background: linear-gradient(90deg, #2e8b57, #3fae6c);
+      color: white;
+      text-align: center;
+      padding: 18px;
+      margin-top: 40px;
+      box-shadow: 0 -3px 12px rgba(0,0,0,0.15);
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <h1>整形外科クリニック</h1>
-    <nav>
-        <a href="#about">当院について</a>
-        <a href="#services">診療内容</a>
-        <a href="#access">アクセス</a>
-    </nav>
-</header>
+  <header>
+    <img src="IMG_2354.png" alt="阿部整形外科ロゴ">
+  </header>
 
-<div class="hero">
-    <div class="hero-text">地域に寄り添う整形外科医療</div>
-</div>
+  <nav>
+    <img src="robi.jpg" alt="ロビー" style="display:block; margin:0 auto 20px;">
+    <a href="news.html">お知らせ</a>
+    <a href="shinryo.html">診療案内</a>
+    <a href="doctor.html">医師紹介</a>
+    <a href="facility.html">施設紹介</a>
+    <a href="access.html">アクセス</a>
+  </nav>
 
-<section id="about">
-    <h2>当院について</h2>
-    <div class="card">
-        <p>当院は地域の皆さまに寄り添い、丁寧で質の高い整形外科医療を提供しています。</p>
-    </div>
-</section>
+  <div class="container">
+    <h2>お知らせ（最新5件）</h2>
+    <ul>
+      <li><a href="news.html">4月4日土曜日休診のお知らせ</a> <span class="new-badge">NEW!</span></li>
+      <li>令和2年8月に骨密度測定器を最新にしました</li>
+      <li><a href="access.html#parking">提携駐車場のご案内</a></li>
+      <li>理学療法は専門的な運動療法を行っております</li>
+      <li>ホームページ稼働し始めました</li>
+    </ul>
+  </div>
 
-<section id="services">
-    <h2>診療内容</h2>
-    <div class="card">
-        <p>・一般整形外科<br>
-           ・リハビリテーション<br>
-           ・スポーツ外傷<br>
-           ・骨粗鬆症治療</p>
-    </div>
-</section>
+  <div class="normal-section">
+    <h2>診療時間</h2>
+    <p>月〜金：9:00〜12:30 / 15:00〜18:30<br>
+       土曜：9:00〜12:30<br>
+       休診日：木曜・日曜・祝日</p>
 
-<section id="access">
-    <h2>アクセス</h2>
-    <div class="card">
-        <p>東京都世田谷区 ○○丁目<br>
-           最寄駅：○○駅 徒歩5分</p>
-    </div>
-</section>
+    <h2>所在地</h2>
+    <p>〒157-0073 東京都世田谷区砧3-4-3 グリーンモール砧1F<br>
+       電話：03-5727-3725</p>
+  </div>
 
-<footer>
-    © 整形外科クリニック
-</footer>
+  <footer>
+    © 2026 阿部整形外科
+  </footer>
 
 </body>
 </html>
