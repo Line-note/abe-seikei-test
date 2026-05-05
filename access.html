@@ -11,59 +11,86 @@
         body { 
             font-family: "Shippori Mincho", serif;
             margin: 0; 
-            background: #f9fff9;
+            background: #f4fff6;
+            color: #003300;
         }
 
+        /* ▼ 葉模様を中央に寄せてしっかり見せる＋背景エリアは半分の高さ */
         header { 
-            background: #2e8b57; 
-            color: white; 
-            padding: 25px; 
+            background:
+                linear-gradient(180deg,
+                    rgba(255,255,255,0.03) 0%,
+                    rgba(255,255,255,0.10) 35%,
+                    rgba(255,255,255,0.22) 70%,
+                    rgba(255,255,255,0.50) 100%
+                ),
+                url("leaf.jpg") center 80% / cover no-repeat;
+            padding: 35px 0 40px;
             text-align: center; 
+            color: #1f6b3f;
+            font-size: 1.8em;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
 
+        /* ▼ nav：index と同じ薄緑背景＋濃い緑文字 */
         nav { 
-            background: #3fae6c; 
-            padding: 12px; 
+            background: #e9fff0; 
+            padding: 14px; 
             text-align: center; 
         }
 
         nav a { 
-            color: white; 
+            color: #006633; 
             margin: 0 18px; 
             text-decoration: none; 
-            font-weight: bold; 
-            white-space: nowrap; 
+            font-weight: 700;
+            white-space: nowrap;
         }
 
+        /* ▼ コンテナ：index と同じ白＋左右の緑ライン＋影 */
         .container { 
             max-width: 900px; 
-            margin: auto; 
-            padding: 20px; 
-            background: #f4fff4;
-            border-radius: 10px;
+            margin: 40px auto; 
+            padding: 28px; 
+            background: #ffffff;
+            border-radius: 12px;
+
+            border-left: 6px solid #4fcf8a;
+            border-right: 6px solid #4fcf8a;
+
+            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
         }
 
         h2 { 
-            border-left: 6px solid #1f6b3f; /* ← 濃い緑 */
-            padding-left: 10px; 
-            color: #1f6b3f; /* ← 見出し文字も濃い緑 */
+            padding-left: 12px; 
+            font-weight: 700;
+            color: #1f6b3f;
+            border-left: 6px solid #1f6b3f;
+            margin-top: 30px;
         }
 
-        ul { line-height: 1.8; }
-
-        footer { 
-            background: #2e8b57; 
-            color: white; 
-            text-align: center; 
-            padding: 15px; 
-            margin-top: 40px; 
+        p, ul { 
+            line-height: 1.9; 
         }
 
+        ul { padding-left: 20px; }
+
+        /* ▼ 写真：角丸＋影 */
         img { 
             border-radius: 15px; 
             width: 100%; 
             margin: 15px 0; 
-            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            box-shadow: 0 0 15px rgba(0,0,0,0.25);
+        }
+
+        /* ▼ フッター：index と同じ深緑グラデーション */
+        footer { 
+            background: linear-gradient(90deg,#1f6b3f,#2f8f5a,#3fae6c);
+            color: white; 
+            text-align: center; 
+            padding: 18px; 
+            margin-top: 40px; 
         }
     </style>
 </head>
@@ -71,7 +98,7 @@
 <body>
 
 <header>
-    <h1>アクセス</h1>
+    アクセス
 </header>
 
 <nav>
@@ -107,16 +134,15 @@
     <h2>提携駐車場のご案内</h2>
     <p>
         最大13台まで駐車可能です。<br>
-        当院在院時間に応じて <b>最大1時間分のサービス券</b> をお渡しします。駐車場ご利用の際は必ず当日の駐車証明書ををご持参ください。
-
-
+        当院在院時間に応じて <b>最大1時間分のサービス券</b> をお渡しします。<br>
+        駐車場ご利用の際は必ず当日の駐車証明書をご持参ください。
     </p>
 
     <img src="tyushajo1.jpg" alt="駐車場写真1">
 
     <p>
         以前より停められる台数が少なくなっております。<br>
-        提携駐車場ではありませんがよろしければ下の駐車場案内図もご参考にしてください。
+        提携駐車場ではありませんが、下の駐車場案内図もご参考にしてください。
     </p>
 
     <img src="tyushajo2.jpg" alt="駐車場写真2">
