@@ -15,19 +15,19 @@
             color: #003300;
         }
 
-        /* ▼ 葉模様を大きく中央に寄せて、しっかり見えるように調整 */
+        /* ▼ 葉模様をさらに中央へ（大きく下へ）＋背景エリアは半分に縮小 */
         header { 
             background:
                 linear-gradient(180deg,
-                    rgba(255,255,255,0.05) 0%,
-                    rgba(255,255,255,0.12) 35%,
-                    rgba(255,255,255,0.25) 70%,
-                    rgba(255,255,255,0.55) 100%
+                    rgba(255,255,255,0.03) 0%,
+                    rgba(255,255,255,0.10) 35%,
+                    rgba(255,255,255,0.22) 70%,
+                    rgba(255,255,255,0.50) 100%
                 ),
-                url("leaf.jpg") center 65% / cover no-repeat;
-            /* ↑ 最重要：center 65% で葉模様を大きく下へ寄せる */
+                url("leaf.jpg") center 80% / cover no-repeat;
+            /* ↑ 最重要：center 80% で葉模様を大きく下へ寄せる */
 
-            padding: 70px 0 80px; /* 葉がしっかり入るように高さを確保 */
+            padding: 35px 0 40px; /* ← 高さを半分に縮小 */
             text-align: center; 
             color: #1f6b3f;
             font-size: 1.8em;
