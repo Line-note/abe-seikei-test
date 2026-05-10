@@ -16,7 +16,7 @@
             line-height: 1.8;
         }
 
-        /* ▼ news.html と同じ葉模様ヘッダー */
+        /* ▼ news.html と同じ葉模様ヘッダー（タイトルだけ小さくして1行化） */
         header { 
             background:
                 linear-gradient(180deg,
@@ -30,9 +30,13 @@
             padding: 35px 0 40px;
             text-align: center; 
             color: #1f6b3f;
-            font-size: 1.8em;
+
+            /* ▼ ここを調整（1.8em → 1.42em） */
+            font-size: 1.42em;
+
             font-weight: 700;
             letter-spacing: 2px;
+            white-space: nowrap; /* ← 強制的に1行にする */
         }
 
         /* ▼ nav（news.html と完全一致） */
