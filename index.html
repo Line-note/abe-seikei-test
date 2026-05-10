@@ -16,7 +16,6 @@
       line-height: 1.8;
     }
 
-    /* ▼ 背景はそのまま（つながり維持） */
     header {
       background:
         linear-gradient(180deg,
@@ -32,21 +31,16 @@
       z-index: 1;
     }
 
-    /* ▼ ロゴ：位置を少し上へ戻す（translateY:55px） */
     header img.logo {
       display: block;
       margin: 0 auto;
       width: 90%;
       max-width: 800px;
       transform: scale(1.34) translateX(-10px) translateY(55px);
-      /* scale:1.34 → 大きさそのまま
-         translateX:-10px → 左右位置そのまま
-         translateY:55px → 下げすぎを修正し、自然な位置へ */
       position: relative;
       z-index: 5;
     }
 
-    /* ▼ 写真は動かさない */
     .nav-area {
       position: relative;
       z-index: 10;
@@ -107,6 +101,14 @@
       text-align: center;
       padding: 18px;
       margin-top: 40px;
+      font-size: 0.95em;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: underline;
+      margin: 0 10px;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -149,6 +151,7 @@
   </div>
 
   <footer>
+    <a href="keijijiko.html">厚生労働大臣が定める掲示事項</a> |
     © 2026 阿部整形外科
   </footer>
 
